@@ -1,0 +1,21 @@
+//
+//  NewFeatureView.swift
+//  ibve
+//
+//  Created by yesway on 16/7/26.
+//  Copyright © 2016年 joker. All rights reserved.
+//
+
+import UIKit
+
+class NewFeatureView: UIView {
+
+    /*
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+    }
+    */
+
+}
