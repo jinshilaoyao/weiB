@@ -55,6 +55,8 @@ class NetworkManager: AFHTTPSessionManager {
         
         if let name = name, data = data {
             
+            
+            
         } else {
         
         request(method: method, URLString: URLSrting, parameters: parameters, completion: completion)
