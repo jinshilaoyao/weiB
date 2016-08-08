@@ -23,13 +23,22 @@ extension NetworkManager {
                       "redirect_uri": RedirectURI]
         
         request(method: .POST,URLString: urlString, parameters: params) { (json, isSuccess) in
-//            print(json)
+            print(json)
             
             self.userAccount.yy_modelSet(with: (json as? [String: AnyObject]) ?? [:])
             
-
+            self.loadUserInfo(completion: { (dict) in
+                
+                self.userAccount.yy_modelSet(with: dict)
+                
+                self.userAccount.saveAccount()
+                
+                print(self.userAccount)
+                
+                completion(isSuccess: isSuccess)
+                
+            })
         }
-        
     }
 }
 
@@ -43,6 +52,10 @@ extension NetworkManager {
         
         let params = ["uid":uid];
         
-        
+        tokenRequest(URLSrting: url, parameters: params) { (json, isSuccess) in
+            
+            completion(dict: (json as? [String: AnyObject]) ?? [:])
+            
+        }
     }
 }

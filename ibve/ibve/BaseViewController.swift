@@ -14,7 +14,7 @@ class BaseViewController: UIViewController {
     
     var tableView: UITableView?
     
-//    var refeshControl: CZRedfreshControl;
+    var refeshControl: CZRefreshControl?
     
     var isPullup = false
     
@@ -27,16 +27,9 @@ class BaseViewController: UIViewController {
         
         setupUI()
         
+        NetworkManager.shared.userLogin ? loadData() : ()
+        
         NotificationCenter.default().addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: UserLoginSuccessedNotification), object: nil)
-        
-        
-        let path = "useraccount.json"
-        
-        print(path.cz_appendDocumentDir())
-        
-        print(path.cz_appendCacheDir)
-        
-        print(path.cz_appendTempDir())
         
         
     }
@@ -52,11 +45,18 @@ class BaseViewController: UIViewController {
     }
     
     func loadData() {
-        
+        refeshControl?.endRefreshing()
     }
     
     @objc private func loginSuccess() {
+        print("login Success!")
         
+        navItem.leftBarButtonItem = nil
+        navItem.rightBarButtonItem = nil
+        
+        view = nil
+        
+        NotificationCenter.default().removeObserver(self)
     }
 }
 extension BaseViewController {
@@ -69,7 +69,33 @@ extension BaseViewController {
         
         setupNavigationBar()
         
-        setupVisitorView()
+        NetworkManager.shared.userLogin ? setupTableView() : setupVisitorView()
+        
+    }
+    
+    private func setupTableView() {
+        
+        tableView = UITableView(frame: view.bounds, style: .plain)
+        
+        view.insertSubview(tableView!, belowSubview: navigationBar)
+        
+        tableView?.dataSource = self
+        tableView?.delegate = self
+        
+        // 设置内容缩进
+        tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height,
+                                               left: 0,
+                                               bottom: tabBarController?.tabBar.bounds.height ?? 49,
+                                               right: 0)
+//
+        // 修改指示器的缩进 - 强行解包是为了拿到一个必有的 inset
+        tableView?.scrollIndicatorInsets = tableView!.contentInset
+        
+        refeshControl = CZRefreshControl()
+        
+        tableView?.addSubview(refeshControl!)
+        
+        refeshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
         
     }
     
@@ -109,5 +135,38 @@ extension BaseViewController {
         navigationBar.tintColor = UIColor.orange()
         
     }
+}
+
+extension BaseViewController: UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let row = indexPath.row
+        
+        let section = tableView.numberOfSections - 1
+        
+        if row < 0 || section < 0 { return }
+        
+        let count = tableView.numberOfRows(inSection: section)
+        
+        if row == (count - 1) && !isPullup {
+            print("上拉刷新")
+            
+            isPullup = true
+            
+            loadData()
+        }
+        
+    }
 }

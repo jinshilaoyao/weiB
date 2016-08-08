@@ -66,6 +66,8 @@ class UserAccount: NSObject {
         }
         
         (data as NSData).write(toFile: filePath, atomically: true)
+        
+        print("用户账户保存成功 \(filePath)")
     }
     
     
