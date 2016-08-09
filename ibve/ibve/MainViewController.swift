@@ -79,12 +79,30 @@ extension MainViewController {
     
     private func setupNewFeatureViews() {
         
+        if !NetworkManager.shared.userLogin {
+            return
+        }
         
+        let v = isNewVersion ? NewFeatureView() : WelcomeView.showWelcomeView()
         
+        view.addSubview(v)
     }
     
     
-    
+    private var isNewVersion: Bool {
+        
+        let currentVersion = Bundle.main().infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        
+        print("当前版本" + currentVersion)
+        
+        let path = ("version" as NSString).cz_appendDocumentDir()
+        let sandBoxVersion = (try? String(contentsOfFile: path!)) ?? ""
+        
+        _ = try? currentVersion.write(toFile: path!, atomically: true, encoding: .utf8)
+        
+        
+        return currentVersion != sandBoxVersion
+    }
 }
 
 extension MainViewController {

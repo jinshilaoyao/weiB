@@ -8,10 +8,44 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WelcomeView" customModule="ibve" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="ws1-Qx-qKY"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X4H-gd-6el">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="85" id="1fQ-iE-5WC"/>
+                        <constraint firstAttribute="width" constant="85" id="FFi-9B-LVz"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzf-g3-oqn">
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ws1-Qx-qKY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3sX-e2-h0z"/>
+                <constraint firstAttribute="bottom" secondItem="X4H-gd-6el" secondAttribute="bottom" constant="191" id="GK7-Il-trB"/>
+                <constraint firstItem="mzf-g3-oqn" firstAttribute="top" secondItem="X4H-gd-6el" secondAttribute="bottom" constant="8" id="H18-V2-gTZ"/>
+                <constraint firstAttribute="trailing" secondItem="ws1-Qx-qKY" secondAttribute="trailing" id="WeZ-gV-4iq"/>
+                <constraint firstItem="ws1-Qx-qKY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cIU-ol-8oi"/>
+                <constraint firstAttribute="bottom" secondItem="ws1-Qx-qKY" secondAttribute="bottom" id="mb0-Vl-8d2"/>
+                <constraint firstItem="X4H-gd-6el" firstAttribute="centerX" secondItem="ws1-Qx-qKY" secondAttribute="centerX" id="rMD-zb-Bxe"/>
+                <constraint firstItem="mzf-g3-oqn" firstAttribute="centerX" secondItem="X4H-gd-6el" secondAttribute="centerX" id="w53-D0-LjD"/>
+            </constraints>
+            <connections>
+                <outlet property="ad_background" destination="ws1-Qx-qKY" id="MXs-YN-wVK"/>
+                <outlet property="constraint" destination="GK7-Il-trB" id="xHv-KE-hH4"/>
+                <outlet property="iconView" destination="X4H-gd-6el" id="xKN-KA-Uk6"/>
+                <outlet property="tiplabel" destination="mzf-g3-oqn" id="obT-mM-gv9"/>
+            </connections>
+            <point key="canvasLocation" x="-69.5" y="74.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="ad_background" width="375" height="667"/>
+    </resources>
 </document>
