@@ -23,3 +23,14 @@ let RedirectURI = "http://baidu.com"
 let UserShouldLoginNotification = "UserShouldLoginNotification"
 /// 用户登录成功通知
 let UserLoginSuccessedNotification = "UserLoginSuccessedNotification"
+
+
+// 配图视图外侧的间距
+let StatusPictureViewOutterMargin = CGFloat(12)
+// 配图视图内部图像视图的间距
+let StatusPictureViewInnerMargin = CGFloat(3)
+// 视图的宽度的宽度
+let StatusPictureViewWidth = UIScreen.cz_screenWidth() - 2 * StatusPictureViewOutterMargin
+// 每个 Item 默认的宽度
+let StatusPictureItemWidth = (StatusPictureViewWidth - 2 * StatusPictureViewInnerMargin) / 3
+

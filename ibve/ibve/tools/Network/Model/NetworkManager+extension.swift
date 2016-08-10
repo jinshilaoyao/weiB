@@ -7,7 +7,30 @@
 //
 
 import Foundation
-
+// MARK: - 微博网络请求
+extension NetworkManager {
+    
+    func statusList(since_id: Int64 = 0, max_id: Int64 = 0, completion:(list: [[String: AnyObject]]?, isSuccess:Bool) ->()) {
+        
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        
+        let params = ["since_id":"\(since_id)",
+                      "max_id":"\(max_id > 0 ? max_id - 1 : 0)"]
+        
+        tokenRequest(URLSrting: urlString, parameters: params) { (json, isSuccess) in
+            
+            guard let result = json?["statuses"] as? [[String: AnyObject]] else {
+                return
+            }
+            
+            completion(list: result, isSuccess: true)
+            
+        }
+        
+        
+    }
+    
+}
 
 // MARK: - OAuth方法
 extension NetworkManager {
@@ -42,6 +65,8 @@ extension NetworkManager {
     }
 }
 
+
+// MARK: - 获取用户信息
 extension NetworkManager {
     func loadUserInfo(completion: (dict: [String: AnyObject]) -> ()) {
         guard let uid = userAccount.uid  else {

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3DD625C417E7AEE3D5437D37 /* Pods_ibve.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5428F119D5977A8A0F00AEE /* Pods_ibve.framework */; };
+		EB35BBF21D59779100E561F0 /* StatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB35BBF11D59779100E561F0 /* StatusListViewModel.swift */; };
+		EB35BBF41D597D4F00E561F0 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB35BBF31D597D4F00E561F0 /* StatusViewModel.swift */; };
+		EB35BBF61D597D6F00E561F0 /* StatusListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB35BBF51D597D6F00E561F0 /* StatusListDAL.swift */; };
 		EB3A8F0D1D585EBC009CC4CD /* CZHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB3A8F071D585EBC009CC4CD /* CZHumanRefreshView.xib */; };
 		EB3A8F0E1D585EBC009CC4CD /* CZMeituanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3A8F081D585EBC009CC4CD /* CZMeituanRefreshView.swift */; };
 		EB3A8F0F1D585EBC009CC4CD /* CZMeituanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB3A8F091D585EBC009CC4CD /* CZMeituanRefreshView.xib */; };
@@ -36,6 +39,22 @@
 		EBA454B81D4709D1005F7A60 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA454B71D4709D1005F7A60 /* DiscoverViewController.swift */; };
 		EBA454BA1D4709E7005F7A60 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA454B91D4709E7005F7A60 /* ProfileViewController.swift */; };
 		EBAD3FA61D4754AD00557454 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAD3FA51D4754AD00557454 /* VisitorView.swift */; };
+		EBCBC0341D59AB1600127C92 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0331D59AB1600127C92 /* Status.swift */; };
+		EBCBC0361D59ABEF00127C92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0351D59ABEF00127C92 /* User.swift */; };
+		EBCBC0381D59AC0100127C92 /* StatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0371D59AC0100127C92 /* StatusPicture.swift */; };
+		EBCBC03A1D59ADB400127C92 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0391D59ADB400127C92 /* String+Extension.swift */; };
+		EBCBC03C1D59AE0500127C92 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC03B1D59AE0500127C92 /* Date+Extension.swift */; };
+		EBCBC04A1D59BE2D00127C92 /* CZEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC03D1D59BE2D00127C92 /* CZEmoticonManager.swift */; };
+		EBCBC04B1D59BE2D00127C92 /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EBCBC03E1D59BE2D00127C92 /* HMEmoticon.bundle */; };
+		EBCBC04C1D59BE2D00127C92 /* CZEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0401D59BE2D00127C92 /* CZEmoticon.swift */; };
+		EBCBC04D1D59BE2D00127C92 /* CZEmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0411D59BE2D00127C92 /* CZEmoticonAttachment.swift */; };
+		EBCBC04E1D59BE2D00127C92 /* CZEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0421D59BE2D00127C92 /* CZEmoticonPackage.swift */; };
+		EBCBC04F1D59BE2D00127C92 /* CZEmoticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0441D59BE2D00127C92 /* CZEmoticonCell.swift */; };
+		EBCBC0501D59BE2D00127C92 /* CZEmoticonInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0451D59BE2D00127C92 /* CZEmoticonInputView.swift */; };
+		EBCBC0511D59BE2D00127C92 /* CZEmoticonInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBCBC0461D59BE2D00127C92 /* CZEmoticonInputView.xib */; };
+		EBCBC0521D59BE2D00127C92 /* CZEmoticonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0471D59BE2D00127C92 /* CZEmoticonLayout.swift */; };
+		EBCBC0531D59BE2D00127C92 /* CZEmoticonTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0481D59BE2D00127C92 /* CZEmoticonTipView.swift */; };
+		EBCBC0541D59BE2D00127C92 /* CZEmoticonToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0491D59BE2D00127C92 /* CZEmoticonToolbar.swift */; };
 		EBCE6F9C1D47334A00D1FDE6 /* NewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCE6F9B1D47334A00D1FDE6 /* NewFeatureView.swift */; };
 		EBCE6F9E1D47337800D1FDE6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCE6F9D1D47337800D1FDE6 /* WelcomeView.swift */; };
 		EBCE6FA01D4733B400D1FDE6 /* NewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBCE6F9F1D4733B400D1FDE6 /* NewFeatureView.xib */; };
@@ -54,6 +73,9 @@
 		08A00E5CEB9983F5C4C6E1C3 /* Pods-ibve.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ibve.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ibve/Pods-ibve.debug.xcconfig"; sourceTree = "<group>"; };
 		A54172B5299BBF9936C51665 /* Pods-ibve.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ibve.release.xcconfig"; path = "Pods/Target Support Files/Pods-ibve/Pods-ibve.release.xcconfig"; sourceTree = "<group>"; };
 		E5428F119D5977A8A0F00AEE /* Pods_ibve.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ibve.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB35BBF11D59779100E561F0 /* StatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusListViewModel.swift; sourceTree = "<group>"; };
+		EB35BBF31D597D4F00E561F0 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusViewModel.swift; path = Assets.xcassets/StatusViewModel.swift; sourceTree = "<group>"; };
+		EB35BBF51D597D6F00E561F0 /* StatusListDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusListDAL.swift; sourceTree = "<group>"; };
 		EB3A8F071D585EBC009CC4CD /* CZHumanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZHumanRefreshView.xib; sourceTree = "<group>"; };
 		EB3A8F081D585EBC009CC4CD /* CZMeituanRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZMeituanRefreshView.swift; sourceTree = "<group>"; };
 		EB3A8F091D585EBC009CC4CD /* CZMeituanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZMeituanRefreshView.xib; sourceTree = "<group>"; };
@@ -96,6 +118,22 @@
 		EBA454B71D4709D1005F7A60 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		EBA454B91D4709E7005F7A60 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EBAD3FA51D4754AD00557454 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		EBCBC0331D59AB1600127C92 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		EBCBC0351D59ABEF00127C92 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EBCBC0371D59AC0100127C92 /* StatusPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPicture.swift; sourceTree = "<group>"; };
+		EBCBC0391D59ADB400127C92 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		EBCBC03B1D59AE0500127C92 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		EBCBC03D1D59BE2D00127C92 /* CZEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonManager.swift; sourceTree = "<group>"; };
+		EBCBC03E1D59BE2D00127C92 /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
+		EBCBC0401D59BE2D00127C92 /* CZEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticon.swift; sourceTree = "<group>"; };
+		EBCBC0411D59BE2D00127C92 /* CZEmoticonAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonAttachment.swift; sourceTree = "<group>"; };
+		EBCBC0421D59BE2D00127C92 /* CZEmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonPackage.swift; sourceTree = "<group>"; };
+		EBCBC0441D59BE2D00127C92 /* CZEmoticonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonCell.swift; sourceTree = "<group>"; };
+		EBCBC0451D59BE2D00127C92 /* CZEmoticonInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonInputView.swift; sourceTree = "<group>"; };
+		EBCBC0461D59BE2D00127C92 /* CZEmoticonInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZEmoticonInputView.xib; sourceTree = "<group>"; };
+		EBCBC0471D59BE2D00127C92 /* CZEmoticonLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonLayout.swift; sourceTree = "<group>"; };
+		EBCBC0481D59BE2D00127C92 /* CZEmoticonTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonTipView.swift; sourceTree = "<group>"; };
+		EBCBC0491D59BE2D00127C92 /* CZEmoticonToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonToolbar.swift; sourceTree = "<group>"; };
 		EBCE6F9B1D47334A00D1FDE6 /* NewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureView.swift; sourceTree = "<group>"; };
 		EBCE6F9D1D47337800D1FDE6 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		EBCE6F9F1D4733B400D1FDE6 /* NewFeatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewFeatureView.xib; sourceTree = "<group>"; };
@@ -246,30 +284,20 @@
 		EB7E67CA1D3CB73000C41B74 /* Emoticon */ = {
 			isa = PBXGroup;
 			children = (
-				EB7E67CB1D3CB73000C41B74 /* Model */,
-				EB7E67CC1D3CB73000C41B74 /* View */,
+				EBCBC03D1D59BE2D00127C92 /* CZEmoticonManager.swift */,
+				EBCBC03E1D59BE2D00127C92 /* HMEmoticon.bundle */,
+				EBCBC03F1D59BE2D00127C92 /* Model */,
+				EBCBC0431D59BE2D00127C92 /* View */,
 			);
 			path = Emoticon;
-			sourceTree = "<group>";
-		};
-		EB7E67CB1D3CB73000C41B74 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		EB7E67CC1D3CB73000C41B74 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		EB7E67CD1D3CB73000C41B74 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				EB7CEE791D489D86001195AD /* UIBarButtonItem+Extensions.swift */,
+				EBCBC0391D59ADB400127C92 /* String+Extension.swift */,
+				EBCBC03B1D59AE0500127C92 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -314,6 +342,29 @@
 				EBAD3FA51D4754AD00557454 /* VisitorView.swift */,
 			);
 			name = VisitorView;
+			sourceTree = "<group>";
+		};
+		EBCBC03F1D59BE2D00127C92 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EBCBC0401D59BE2D00127C92 /* CZEmoticon.swift */,
+				EBCBC0411D59BE2D00127C92 /* CZEmoticonAttachment.swift */,
+				EBCBC0421D59BE2D00127C92 /* CZEmoticonPackage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EBCBC0431D59BE2D00127C92 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EBCBC0441D59BE2D00127C92 /* CZEmoticonCell.swift */,
+				EBCBC0451D59BE2D00127C92 /* CZEmoticonInputView.swift */,
+				EBCBC0461D59BE2D00127C92 /* CZEmoticonInputView.xib */,
+				EBCBC0471D59BE2D00127C92 /* CZEmoticonLayout.swift */,
+				EBCBC0481D59BE2D00127C92 /* CZEmoticonTipView.swift */,
+				EBCBC0491D59BE2D00127C92 /* CZEmoticonToolbar.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		EBCE6F9A1D4732C400D1FDE6 /* NewFeature */ = {
@@ -392,6 +443,9 @@
 		EBDF617F1D35ECCB008927A5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				EB35BBF11D59779100E561F0 /* StatusListViewModel.swift */,
+				EB35BBF31D597D4F00E561F0 /* StatusViewModel.swift */,
+				EB35BBF51D597D6F00E561F0 /* StatusListDAL.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -399,6 +453,9 @@
 		EBDF61801D35ECD8008927A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EBCBC0331D59AB1600127C92 /* Status.swift */,
+				EBCBC0351D59ABEF00127C92 /* User.swift */,
+				EBCBC0371D59AC0100127C92 /* StatusPicture.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -482,6 +539,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBCBC0511D59BE2D00127C92 /* CZEmoticonInputView.xib in Resources */,
 				EBCE6FA01D4733B400D1FDE6 /* NewFeatureView.xib in Resources */,
 				EB3A8F121D585EBC009CC4CD /* CZRefreshView.xib in Resources */,
 				EBCE6FA21D4733CC00D1FDE6 /* WelcomeView.xib in Resources */,
@@ -489,6 +547,7 @@
 				EB3A8F0D1D585EBC009CC4CD /* CZHumanRefreshView.xib in Resources */,
 				EBDF61751D35E3CC008927A5 /* LaunchScreen.storyboard in Resources */,
 				EB3A8F0F1D585EBC009CC4CD /* CZMeituanRefreshView.xib in Resources */,
+				EBCBC04B1D59BE2D00127C92 /* HMEmoticon.bundle in Resources */,
 				EBDF61721D35E3CC008927A5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,38 +607,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB35BBF41D597D4F00E561F0 /* StatusViewModel.swift in Sources */,
 				EB7CEE7C1D48B356001195AD /* NetworkManager.swift in Sources */,
 				EB7E67D11D3CB73000C41B74 /* NSArray+Log.m in Sources */,
 				EB7E67D61D3CB73000C41B74 /* NSString+CZPath.m in Sources */,
+				EBCBC04D1D59BE2D00127C92 /* CZEmoticonAttachment.swift in Sources */,
 				EBF0C9E31D4F1C5F009995D1 /* NetworkManager+extension.swift in Sources */,
 				EBA454BA1D4709E7005F7A60 /* ProfileViewController.swift in Sources */,
+				EBCBC04C1D59BE2D00127C92 /* CZEmoticon.swift in Sources */,
 				EB7E67D51D3CB73000C41B74 /* NSString+CZHash.m in Sources */,
 				EBAD3FA61D4754AD00557454 /* VisitorView.swift in Sources */,
 				EB7E67DF1D3CB82800C41B74 /* HomeViewController.swift in Sources */,
 				EBDF616B1D35E3CC008927A5 /* AppDelegate.swift in Sources */,
+				EBCBC0521D59BE2D00127C92 /* CZEmoticonLayout.swift in Sources */,
 				EB7E67DA1D3CB73000C41B74 /* UIScreen+CZAddition.m in Sources */,
 				EB7E67D91D3CB73000C41B74 /* UILabel+CZAddition.m in Sources */,
 				EB7E67D71D3CB73000C41B74 /* UIButton+CZAddition.m in Sources */,
 				EBCE6F9C1D47334A00D1FDE6 /* NewFeatureView.swift in Sources */,
 				EBA454B81D4709D1005F7A60 /* DiscoverViewController.swift in Sources */,
 				EB7E67D31D3CB73000C41B74 /* NSObject+CZRuntime.m in Sources */,
+				EBCBC0541D59BE2D00127C92 /* CZEmoticonToolbar.swift in Sources */,
 				EB7E67D41D3CB73000C41B74 /* NSString+CZBase64.m in Sources */,
+				EBCBC03C1D59AE0500127C92 /* Date+Extension.swift in Sources */,
 				EB7CEE781D4894C0001195AD /* OAuthViewController.swift in Sources */,
 				EB3A8F101D585EBC009CC4CD /* CZRefreshControl.swift in Sources */,
+				EBCBC03A1D59ADB400127C92 /* String+Extension.swift in Sources */,
 				EBA454B61D4709B6005F7A60 /* MessageViewController.swift in Sources */,
 				EB7E67DC1D3CB73000C41B74 /* UIViewController+CZAddition.m in Sources */,
 				EB7CEE751D48909A001195AD /* Common.swift in Sources */,
+				EBCBC04F1D59BE2D00127C92 /* CZEmoticonCell.swift in Sources */,
 				EB3A8F111D585EBC009CC4CD /* CZRefreshView.swift in Sources */,
+				EBCBC0361D59ABEF00127C92 /* User.swift in Sources */,
+				EBCBC0381D59AC0100127C92 /* StatusPicture.swift in Sources */,
+				EBCBC04E1D59BE2D00127C92 /* CZEmoticonPackage.swift in Sources */,
+				EBCBC0341D59AB1600127C92 /* Status.swift in Sources */,
 				EB7E67DB1D3CB73000C41B74 /* UIView+CZAddition.m in Sources */,
 				EB7CEE7E1D48B616001195AD /* UserAccount.swift in Sources */,
 				EB7E67D21D3CB73000C41B74 /* NSAttributedString+CZAdditon.m in Sources */,
 				EB3A8F0E1D585EBC009CC4CD /* CZMeituanRefreshView.swift in Sources */,
+				EBCBC0531D59BE2D00127C92 /* CZEmoticonTipView.swift in Sources */,
 				EB7CEE7A1D489D86001195AD /* UIBarButtonItem+Extensions.swift in Sources */,
 				EBCE6F9E1D47337800D1FDE6 /* WelcomeView.swift in Sources */,
+				EB35BBF61D597D6F00E561F0 /* StatusListDAL.swift in Sources */,
 				EB7E67D81D3CB73000C41B74 /* UIColor+CZAddition.m in Sources */,
+				EBCBC0501D59BE2D00127C92 /* CZEmoticonInputView.swift in Sources */,
+				EB35BBF21D59779100E561F0 /* StatusListViewModel.swift in Sources */,
 				EBDF618A1D362DF7008927A5 /* NavigationController.swift in Sources */,
 				EBDF61841D35F075008927A5 /* MainViewController.swift in Sources */,
 				EBDF61881D36223D008927A5 /* BaseViewController.swift in Sources */,
+				EBCBC04A1D59BE2D00127C92 /* CZEmoticonManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
