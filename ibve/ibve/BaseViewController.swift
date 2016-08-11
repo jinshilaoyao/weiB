@@ -73,7 +73,7 @@ extension BaseViewController {
         
     }
     
-    private func setupTableView() {
+    func setupTableView() {
         
         tableView = UITableView(frame: view.bounds, style: .plain)
         

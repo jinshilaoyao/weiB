@@ -96,11 +96,37 @@ class StatusViewModel {
         
         let margin: CGFloat = 12
         let iconHeight: CGFloat = 34
-        let toolbarheight: CGFloat = 35
+        let toolbarHeight: CGFloat = 35
         
         var height: CGFloat = 0
         
-        let viewSize = CGSize(width: <#T##CGFloat#>, height: <#T##CGFloat#>)
+        let viewSize = CGSize(width: UIScreen.cz_screenWidth() - 2 * margin, height: CGFloat(MAXFLOAT))
+        
+        height = 2 * margin + iconHeight + margin
+        
+        // 3. 判断是否转发微博
+        if status.retweeted_status != nil {
+            
+            height += 2 * margin
+            
+            // 转发文本的高度 - 一定用 retweetedText，拼接了 @用户名:微博文字
+            if let text = retweetedAttrText {
+                
+                height += text.boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], context: nil).height
+            }
+        }
+        
+        // 4. 配图视图
+        height += pictureViewSize.height
+        
+        height += margin
+        
+        // 5. 底部工具栏
+        height += toolbarHeight
+        
+        // 6. 使用属性记录
+        rowHeight = height
+
         
     }
     

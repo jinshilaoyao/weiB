@@ -43,7 +43,7 @@ class StatusListViewModel {
                 
                 status.yy_modelSet(with: statusDict)
                 
-                let viewModel = StatusViewModel()
+                let viewModel = StatusViewModel(model: status)
                 
                 array.append(viewModel)
             }
@@ -60,7 +60,7 @@ class StatusListViewModel {
                 self.pullUpErrorTimes += 1
                 completion(isSuccess: isSuccess, shouldRefresh: false)
             } else {
-                
+                completion(isSuccess: isSuccess, shouldRefresh: true)
             }
         }
     }

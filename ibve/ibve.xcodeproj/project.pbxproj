@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3DD625C417E7AEE3D5437D37 /* Pods_ibve.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5428F119D5977A8A0F00AEE /* Pods_ibve.framework */; };
+		EB17F7311D5AF490004C02C5 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB17F7301D5AF490004C02C5 /* StatusCell.swift */; };
+		EB17F7331D5AF4B3004C02C5 /* StatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB17F7321D5AF4B3004C02C5 /* StatusRetweetedCell.xib */; };
+		EB17F7351D5AF4C2004C02C5 /* StatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB17F7341D5AF4C2004C02C5 /* StatusNormalCell.xib */; };
+		EB17F7371D5B08F5004C02C5 /* UIImageView+WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB17F7361D5B08F5004C02C5 /* UIImageView+WebImageView.swift */; };
 		EB35BBF21D59779100E561F0 /* StatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB35BBF11D59779100E561F0 /* StatusListViewModel.swift */; };
 		EB35BBF41D597D4F00E561F0 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB35BBF31D597D4F00E561F0 /* StatusViewModel.swift */; };
 		EB35BBF61D597D6F00E561F0 /* StatusListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB35BBF51D597D6F00E561F0 /* StatusListDAL.swift */; };
@@ -17,6 +21,8 @@
 		EB3A8F101D585EBC009CC4CD /* CZRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3A8F0A1D585EBC009CC4CD /* CZRefreshControl.swift */; };
 		EB3A8F111D585EBC009CC4CD /* CZRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3A8F0B1D585EBC009CC4CD /* CZRefreshView.swift */; };
 		EB3A8F121D585EBC009CC4CD /* CZRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB3A8F0C1D585EBC009CC4CD /* CZRefreshView.xib */; };
+		EB6F1D1D1D5B0C5E00CD362D /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6F1D1C1D5B0C5E00CD362D /* UIImage+Extension.swift */; };
+		EB6F1D1F1D5B268B00CD362D /* StatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6F1D1E1D5B268B00CD362D /* StatusPictureView.swift */; };
 		EB7CEE751D48909A001195AD /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7CEE741D48909A001195AD /* Common.swift */; };
 		EB7CEE781D4894C0001195AD /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7CEE771D4894C0001195AD /* OAuthViewController.swift */; };
 		EB7CEE7A1D489D86001195AD /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7CEE791D489D86001195AD /* UIBarButtonItem+Extensions.swift */; };
@@ -73,6 +79,10 @@
 		08A00E5CEB9983F5C4C6E1C3 /* Pods-ibve.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ibve.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ibve/Pods-ibve.debug.xcconfig"; sourceTree = "<group>"; };
 		A54172B5299BBF9936C51665 /* Pods-ibve.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ibve.release.xcconfig"; path = "Pods/Target Support Files/Pods-ibve/Pods-ibve.release.xcconfig"; sourceTree = "<group>"; };
 		E5428F119D5977A8A0F00AEE /* Pods_ibve.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ibve.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB17F7301D5AF490004C02C5 /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
+		EB17F7321D5AF4B3004C02C5 /* StatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusRetweetedCell.xib; sourceTree = "<group>"; };
+		EB17F7341D5AF4C2004C02C5 /* StatusNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusNormalCell.xib; sourceTree = "<group>"; };
+		EB17F7361D5B08F5004C02C5 /* UIImageView+WebImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImageView.swift"; sourceTree = "<group>"; };
 		EB35BBF11D59779100E561F0 /* StatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusListViewModel.swift; sourceTree = "<group>"; };
 		EB35BBF31D597D4F00E561F0 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusViewModel.swift; path = Assets.xcassets/StatusViewModel.swift; sourceTree = "<group>"; };
 		EB35BBF51D597D6F00E561F0 /* StatusListDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusListDAL.swift; sourceTree = "<group>"; };
@@ -82,6 +92,8 @@
 		EB3A8F0A1D585EBC009CC4CD /* CZRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZRefreshControl.swift; sourceTree = "<group>"; };
 		EB3A8F0B1D585EBC009CC4CD /* CZRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZRefreshView.swift; sourceTree = "<group>"; };
 		EB3A8F0C1D585EBC009CC4CD /* CZRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZRefreshView.xib; sourceTree = "<group>"; };
+		EB6F1D1C1D5B0C5E00CD362D /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		EB6F1D1E1D5B268B00CD362D /* StatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPictureView.swift; sourceTree = "<group>"; };
 		EB7CEE741D48909A001195AD /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		EB7CEE771D4894C0001195AD /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		EB7CEE791D489D86001195AD /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
@@ -179,6 +191,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EB17F72F1D5AF418004C02C5 /* StatusCell */ = {
+			isa = PBXGroup;
+			children = (
+				EB17F7301D5AF490004C02C5 /* StatusCell.swift */,
+				EB6F1D1E1D5B268B00CD362D /* StatusPictureView.swift */,
+				EB17F7341D5AF4C2004C02C5 /* StatusNormalCell.xib */,
+				EB17F7321D5AF4B3004C02C5 /* StatusRetweetedCell.xib */,
+			);
+			name = StatusCell;
+			sourceTree = "<group>";
+		};
 		EB3A8F051D585EBC009CC4CD /* UI框架 */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +243,7 @@
 		EB7E677B1D3CB6EC00C41B74 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EB17F72F1D5AF418004C02C5 /* StatusCell */,
 				EB7E67DE1D3CB82800C41B74 /* HomeViewController.swift */,
 			);
 			name = Home;
@@ -298,6 +322,8 @@
 				EB7CEE791D489D86001195AD /* UIBarButtonItem+Extensions.swift */,
 				EBCBC0391D59ADB400127C92 /* String+Extension.swift */,
 				EBCBC03B1D59AE0500127C92 /* Date+Extension.swift */,
+				EB17F7361D5B08F5004C02C5 /* UIImageView+WebImageView.swift */,
+				EB6F1D1C1D5B0C5E00CD362D /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -541,8 +567,10 @@
 			files = (
 				EBCBC0511D59BE2D00127C92 /* CZEmoticonInputView.xib in Resources */,
 				EBCE6FA01D4733B400D1FDE6 /* NewFeatureView.xib in Resources */,
+				EB17F7351D5AF4C2004C02C5 /* StatusNormalCell.xib in Resources */,
 				EB3A8F121D585EBC009CC4CD /* CZRefreshView.xib in Resources */,
 				EBCE6FA21D4733CC00D1FDE6 /* WelcomeView.xib in Resources */,
+				EB17F7331D5AF4B3004C02C5 /* StatusRetweetedCell.xib in Resources */,
 				EBDF61861D360EA6008927A5 /* main.json in Resources */,
 				EB3A8F0D1D585EBC009CC4CD /* CZHumanRefreshView.xib in Resources */,
 				EBDF61751D35E3CC008927A5 /* LaunchScreen.storyboard in Resources */,
@@ -610,6 +638,7 @@
 				EB35BBF41D597D4F00E561F0 /* StatusViewModel.swift in Sources */,
 				EB7CEE7C1D48B356001195AD /* NetworkManager.swift in Sources */,
 				EB7E67D11D3CB73000C41B74 /* NSArray+Log.m in Sources */,
+				EB17F7371D5B08F5004C02C5 /* UIImageView+WebImageView.swift in Sources */,
 				EB7E67D61D3CB73000C41B74 /* NSString+CZPath.m in Sources */,
 				EBCBC04D1D59BE2D00127C92 /* CZEmoticonAttachment.swift in Sources */,
 				EBF0C9E31D4F1C5F009995D1 /* NetworkManager+extension.swift in Sources */,
@@ -645,13 +674,16 @@
 				EB7CEE7E1D48B616001195AD /* UserAccount.swift in Sources */,
 				EB7E67D21D3CB73000C41B74 /* NSAttributedString+CZAdditon.m in Sources */,
 				EB3A8F0E1D585EBC009CC4CD /* CZMeituanRefreshView.swift in Sources */,
+				EB6F1D1D1D5B0C5E00CD362D /* UIImage+Extension.swift in Sources */,
 				EBCBC0531D59BE2D00127C92 /* CZEmoticonTipView.swift in Sources */,
 				EB7CEE7A1D489D86001195AD /* UIBarButtonItem+Extensions.swift in Sources */,
 				EBCE6F9E1D47337800D1FDE6 /* WelcomeView.swift in Sources */,
+				EB6F1D1F1D5B268B00CD362D /* StatusPictureView.swift in Sources */,
 				EB35BBF61D597D6F00E561F0 /* StatusListDAL.swift in Sources */,
 				EB7E67D81D3CB73000C41B74 /* UIColor+CZAddition.m in Sources */,
 				EBCBC0501D59BE2D00127C92 /* CZEmoticonInputView.swift in Sources */,
 				EB35BBF21D59779100E561F0 /* StatusListViewModel.swift in Sources */,
+				EB17F7311D5AF490004C02C5 /* StatusCell.swift in Sources */,
 				EBDF618A1D362DF7008927A5 /* NavigationController.swift in Sources */,
 				EBDF61841D35F075008927A5 /* MainViewController.swift in Sources */,
 				EBDF61881D36223D008927A5 /* BaseViewController.swift in Sources */,
