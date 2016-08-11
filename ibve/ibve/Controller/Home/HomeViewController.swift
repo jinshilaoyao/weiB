@@ -56,9 +56,10 @@ extension HomeViewController {
         let cellID = (status.status.retweeted_status != nil) ? retweetedCellId : originalCellId
         
         let cell = tableView.dequeueReusableCell(withIdentifier: originalCellId, for: indexPath) as! StatusCell
-//        let cell = tableView.dequeueReusableCell(withIdentifier: originalCellId)
         
         cell.viewModel = status
+        
+        cell.delegate = self
         
         return cell
     }
@@ -70,6 +71,14 @@ extension HomeViewController {
         // 2. 返回计算好的行高
         return vm.rowHeight
     }
+}
+
+extension HomeViewController: StatusCellDelegate {
+    
+    func statusCellDidSelectedURLString(cell: StatusCell, urlString: String) {
+        print(urlString)
+    }
+    
 }
 
 extension HomeViewController {

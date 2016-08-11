@@ -8,6 +8,14 @@
 
 import UIKit
 
+
+@objc protocol StatusCellDelegate: NSObjectProtocol {
+    
+    @objc optional func statusCellDidSelectedURLString(cell: StatusCell, urlString: String)
+    
+}
+
+
 class StatusCell: UITableViewCell {
     
     @IBOutlet weak var iconView: UIImageView!
@@ -20,11 +28,15 @@ class StatusCell: UITableViewCell {
     
     @IBOutlet weak var menberIconView: UIImageView!
     
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusLabel: FFLabel!
     
-    @IBOutlet weak var pictureView: UIView!
+    @IBOutlet weak var pictureView: StatusPictureView!
     
     @IBOutlet weak var vipIconView: UIImageView!
+    
+    @IBOutlet weak var retweetedLabel: FFLabel?
+    
+    weak var delegate: StatusCellDelegate?
     
     var viewModel: StatusViewModel? {
         didSet {
@@ -41,7 +53,7 @@ class StatusCell: UITableViewCell {
             
             statusLabel.attributedText = viewModel?.statusAttrText
             
-//            pictureView
+            pictureView.viewModel = viewModel
             
             vipIconView.image = viewModel?.vipIcon
         }
@@ -61,6 +73,17 @@ class StatusCell: UITableViewCell {
         // 使用 `栅格化` 必须注意指定分辨率
         self.layer.rasterizationScale = UIScreen.main().scale
         
+        statusLabel.delegate = self
+        retweetedLabel?.delegate = self
     }
+}
+
+extension StatusCell: FFLabelDelegate {
     
+    func labelDidSelectedLinkText(label: FFLabel, text: String) {
+        
+        if !text.hasPrefix("http://") { return }
+        
+        delegate?.statusCellDidSelectedURLString?(cell: self, urlString: text)
+    }
 }

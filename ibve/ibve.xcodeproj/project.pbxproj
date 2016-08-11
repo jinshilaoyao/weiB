@@ -12,6 +12,7 @@
 		EB17F7331D5AF4B3004C02C5 /* StatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB17F7321D5AF4B3004C02C5 /* StatusRetweetedCell.xib */; };
 		EB17F7351D5AF4C2004C02C5 /* StatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB17F7341D5AF4C2004C02C5 /* StatusNormalCell.xib */; };
 		EB17F7371D5B08F5004C02C5 /* UIImageView+WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB17F7361D5B08F5004C02C5 /* UIImageView+WebImageView.swift */; };
+		EB298D4C1D5C0335000D5555 /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB298D4B1D5C0335000D5555 /* FFLabel.swift */; };
 		EB35BBF21D59779100E561F0 /* StatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB35BBF11D59779100E561F0 /* StatusListViewModel.swift */; };
 		EB35BBF41D597D4F00E561F0 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB35BBF31D597D4F00E561F0 /* StatusViewModel.swift */; };
 		EB35BBF61D597D6F00E561F0 /* StatusListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB35BBF51D597D6F00E561F0 /* StatusListDAL.swift */; };
@@ -83,6 +84,7 @@
 		EB17F7321D5AF4B3004C02C5 /* StatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusRetweetedCell.xib; sourceTree = "<group>"; };
 		EB17F7341D5AF4C2004C02C5 /* StatusNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusNormalCell.xib; sourceTree = "<group>"; };
 		EB17F7361D5B08F5004C02C5 /* UIImageView+WebImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImageView.swift"; sourceTree = "<group>"; };
+		EB298D4B1D5C0335000D5555 /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
 		EB35BBF11D59779100E561F0 /* StatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusListViewModel.swift; sourceTree = "<group>"; };
 		EB35BBF31D597D4F00E561F0 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusViewModel.swift; path = Assets.xcassets/StatusViewModel.swift; sourceTree = "<group>"; };
 		EB35BBF51D597D6F00E561F0 /* StatusListDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusListDAL.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 		EB7E67CE1D3CB73000C41B74 /* FFLabel */ = {
 			isa = PBXGroup;
 			children = (
+				EB298D4B1D5C0335000D5555 /* FFLabel.swift */,
 			);
 			path = FFLabel;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				EB6F1D1D1D5B0C5E00CD362D /* UIImage+Extension.swift in Sources */,
 				EBCBC0531D59BE2D00127C92 /* CZEmoticonTipView.swift in Sources */,
 				EB7CEE7A1D489D86001195AD /* UIBarButtonItem+Extensions.swift in Sources */,
+				EB298D4C1D5C0335000D5555 /* FFLabel.swift in Sources */,
 				EBCE6F9E1D47337800D1FDE6 /* WelcomeView.swift in Sources */,
 				EB6F1D1F1D5B268B00CD362D /* StatusPictureView.swift in Sources */,
 				EB35BBF61D597D6F00E561F0 /* StatusListDAL.swift in Sources */,
