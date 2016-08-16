@@ -53,6 +53,7 @@
 		EBA454B81D4709D1005F7A60 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA454B71D4709D1005F7A60 /* DiscoverViewController.swift */; };
 		EBA454BA1D4709E7005F7A60 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA454B91D4709E7005F7A60 /* ProfileViewController.swift */; };
 		EBAD3FA61D4754AD00557454 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAD3FA51D4754AD00557454 /* VisitorView.swift */; };
+		EBC23D811D62E715003D5BED /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC23D801D62E715003D5BED /* WebViewController.swift */; };
 		EBCBC0341D59AB1600127C92 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0331D59AB1600127C92 /* Status.swift */; };
 		EBCBC0361D59ABEF00127C92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0351D59ABEF00127C92 /* User.swift */; };
 		EBCBC0381D59AC0100127C92 /* StatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0371D59AC0100127C92 /* StatusPicture.swift */; };
@@ -147,6 +148,7 @@
 		EBA454B71D4709D1005F7A60 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		EBA454B91D4709E7005F7A60 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EBAD3FA51D4754AD00557454 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		EBC23D801D62E715003D5BED /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		EBCBC0331D59AB1600127C92 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		EBCBC0351D59ABEF00127C92 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EBCBC0371D59AC0100127C92 /* StatusPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPicture.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 			children = (
 				EB17F72F1D5AF418004C02C5 /* StatusCell */,
 				EB7E67DE1D3CB82800C41B74 /* HomeViewController.swift */,
+				EBC23D801D62E715003D5BED /* WebViewController.swift */,
 			);
 			name = Home;
 			path = Controller/Home;
@@ -732,6 +735,7 @@
 				EB7CEE7E1D48B616001195AD /* UserAccount.swift in Sources */,
 				EB7E67D21D3CB73000C41B74 /* NSAttributedString+CZAdditon.m in Sources */,
 				EB3A8F0E1D585EBC009CC4CD /* CZMeituanRefreshView.swift in Sources */,
+				EBC23D811D62E715003D5BED /* WebViewController.swift in Sources */,
 				EB6F1D1D1D5B0C5E00CD362D /* UIImage+Extension.swift in Sources */,
 				EBCBC0531D59BE2D00127C92 /* CZEmoticonTipView.swift in Sources */,
 				EB7CEE7A1D489D86001195AD /* UIBarButtonItem+Extensions.swift in Sources */,

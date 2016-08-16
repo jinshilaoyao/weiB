@@ -20,6 +20,17 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(browserPhoto), name: StatusCellBrowserPhotoNotification, object: nil)
+        
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    
+    @objc private func browserPhoto(n: Notification) {
+        
     }
     
     override func loadData() {
@@ -77,6 +88,12 @@ extension HomeViewController: StatusCellDelegate {
     
     func statusCellDidSelectedURLString(cell: StatusCell, urlString: String) {
         print(urlString)
+        let web = WebViewController()
+        
+        web.urlString = urlString
+        
+        navigationController?.pushViewController(web, animated: true)
+        
     }
     
 }

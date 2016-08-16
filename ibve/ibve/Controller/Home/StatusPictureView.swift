@@ -88,7 +88,7 @@ extension StatusPictureView {
         
         let count = 3
         
-        let rect = CGRect(x: 0, y: 0, width: StatusPictureItemWidth, height: StatusPictureItemWidth)
+        let rect = CGRect(x: 0, y: StatusPictureViewOutterMargin, width: StatusPictureItemWidth, height: StatusPictureItemWidth)
         
         for i in 0..<count * count {
             let iv = UIImageView()
@@ -104,9 +104,54 @@ extension StatusPictureView {
             let xOffset = row * (StatusPictureItemWidth + StatusPictureViewInnerMargin)
             let yOffset = col * (StatusPictureItemWidth + StatusPictureViewInnerMargin)
             
-            iv.frame = rect.offsetBy(dx: xOffset, dy: yOffset)
+            iv.frame = rect.offsetBy(dx: ((i == 0) ? xOffset - 12 : xOffset), dy: yOffset)
             
             addSubview(iv)
+            
+            iv.isUserInteractionEnabled = true
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(tapImageView))
+            
+            iv.addGestureRecognizer(tap)
+            
         }
     }
+    
+    @objc private func tapImageView(tap: UITapGestureRecognizer) {
+        
+        guard let iv = tap.view,
+            let picURLs = viewModel?.picURLs
+            else {
+                return
+        }
+        
+        var selectedIndex = iv.tag
+        
+        // 针对四张图处理
+        if picURLs.count == 4 && selectedIndex > 1 {
+            selectedIndex -= 1
+        }
+        
+        let urls = (picURLs as NSArray).value(forKey: "largePic") as! [String]
+        
+        // 处理可见的图像视图数组
+        var imageViewList = [UIImageView]()
+        
+        for iv in subviews as! [UIImageView] {
+            
+            if !iv.isHidden {
+                imageViewList.append(iv)
+            }
+        }
+        
+        // 发送通知
+        NotificationCenter.default.post(
+            name: NSNotification.Name(rawValue: StatusCellBrowserPhotoNotification),
+            object: self,
+            userInfo: [StatusCellBrowserPhotoURLsKey: urls,
+                       StatusCellBrowserPhotoSelectedIndexKey: selectedIndex,
+                       StatusCellBrowserPhotoImageViewsKey: imageViewList])
+    }
+    
+    
 }

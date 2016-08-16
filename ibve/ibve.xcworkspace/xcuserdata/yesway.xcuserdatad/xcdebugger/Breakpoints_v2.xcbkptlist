@@ -19,13 +19,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ibve/Controller/Home/StatusPictureView.swift"
-            timestampString = "493019783.8257"
+            filePath = "ibve/Controller/Home/HomeViewController.swift"
+            timestampString = "493022471.358486"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "setupUI()"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "statusCellDidSelectedURLString(cell:urlString:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ibve/Assets.xcassets/StatusViewModel.swift"
+            timestampString = "493022931.429594"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "updateRowHeight()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
