@@ -55,7 +55,7 @@ extension HomeViewController {
         
         let cellID = (status.status.retweeted_status != nil) ? retweetedCellId : originalCellId
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: originalCellId, for: indexPath) as! StatusCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! StatusCell
         
         cell.viewModel = status
         
@@ -87,7 +87,7 @@ extension HomeViewController {
         super.setupTableView()
         
         tableView?.register(UINib(nibName: "StatusNormalCell", bundle: nil), forCellReuseIdentifier: originalCellId)
-        tableView?.register(UINib(nibName: "StatusRetweetedlCell", bundle: nil), forCellReuseIdentifier: retweetedCellId)
+        tableView?.register(UINib(nibName: "StatusRetweetedCell", bundle: nil), forCellReuseIdentifier: retweetedCellId)
         
         tableView?.separatorStyle = .none
         

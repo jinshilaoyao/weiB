@@ -81,9 +81,9 @@ private extension CZEmoticonToolbar {
             btn.setTitle(p.groupName, for: [])
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
             
-            btn.setTitleColor(UIColor.white(), for: [])
-            btn.setTitleColor(UIColor.darkGray(), for: .highlighted)
-            btn.setTitleColor(UIColor.darkGray(), for: .selected)
+            btn.setTitleColor(UIColor.white, for: [])
+            btn.setTitleColor(UIColor.darkGray, for: .highlighted)
+            btn.setTitleColor(UIColor.darkGray, for: .selected)
          
             // 设置按钮的背景图片
             let imageName = "compose_emotion_table_\(p.bgImageName ?? "")_normal"

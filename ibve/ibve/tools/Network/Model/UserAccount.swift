@@ -48,7 +48,7 @@ class UserAccount: NSObject {
             access_token = nil
             uid = nil
             
-            _ = try? FileManager.default().isDeletableFile(atPath: path)
+            _ = try? FileManager.default.isDeletableFile(atPath: path)
             
         }
     }

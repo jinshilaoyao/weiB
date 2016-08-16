@@ -25,7 +25,7 @@ class NewFeatureView: UIView {
         
         let v = nib.instantiate(withOwner: nil, options: nil)[0] as! NewFeatureView
         
-        v.frame = UIScreen.main().bounds
+        v.frame = UIScreen.main.bounds
         
         return v
     }
@@ -33,7 +33,7 @@ class NewFeatureView: UIView {
     override func awakeFromNib() {
         
         let count = 4
-        let rect = UIScreen.main().bounds
+        let rect = UIScreen.main.bounds
         
         for i in 0..<count {
             let imageName = "new_feature_\(i + 1)"

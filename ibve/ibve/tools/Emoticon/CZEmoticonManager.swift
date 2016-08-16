@@ -20,7 +20,7 @@ class CZEmoticonManager {
     
     /// 表情素材的 bundle
     lazy var bundle: Bundle = {
-        let path = Bundle.main().pathForResource("HMEmoticon.bundle", ofType: nil)
+        let path = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil)
         
         return Bundle(path: path!)!
     }()
@@ -69,7 +69,7 @@ extension CZEmoticonManager {
     /// - parameter string: 完整的字符串
     ///
     /// - returns: 属性文本
-    func emoticonString(string: String, font: UIFont) -> AttributedString {
+    func emoticonString(string: String, font: UIFont) -> NSAttributedString {
         
         // AttributedString 是不可变的
         let attrString = NSMutableAttributedString(string: string)
@@ -78,7 +78,7 @@ extension CZEmoticonManager {
         // [] () 都是正则表达式的关键字，如果要参与匹配，需要转义
         let pattern = "\\[.*?\\]"
         
-        guard let regx = try? RegularExpression(pattern: pattern, options: []) else {
+        guard let regx = try? NSRegularExpression(pattern: pattern, options: []) else {
             return attrString
         }
         
@@ -88,7 +88,7 @@ extension CZEmoticonManager {
         // 3. 遍历所有匹配结果
         for m in matches.reversed() {
             
-            let r = m.range(at: 0)
+            let r = m.rangeAt(0)
             
             let subStr = (attrString.string as NSString).substring(with: r)
             
@@ -102,7 +102,7 @@ extension CZEmoticonManager {
         
         // 4. *** 统一设置一遍字符串的属性，除了需要设置字体，还需要设置`颜色`！
         attrString.addAttributes([NSFontAttributeName: font,
-                                  NSForegroundColorAttributeName: UIColor.darkGray()],
+                                  NSForegroundColorAttributeName: UIColor.darkGray],
                                  range: NSRange(location: 0, length: attrString.length))
         
         return attrString
@@ -158,9 +158,9 @@ private extension CZEmoticonManager {
         
         // 读取 emoticons.plist
         // 只要按照 Bundle 默认的目录结构设定，就可以直接读取 Resources 目录下的文件
-        guard let path = Bundle.main().pathForResource("HMEmoticon.bundle", ofType: nil),
+        guard let path = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil),
             bundle = Bundle(path: path),
-            plistPath = bundle.pathForResource("emoticons.plist", ofType: nil),
+            plistPath = bundle.path(forResource: "emoticons.plist", ofType: nil),
             array = NSArray(contentsOfFile: plistPath) as? [[String: String]],
             models = NSArray.yy_modelArray(with: CZEmoticonPackage.self, json: array) as? [CZEmoticonPackage]
             

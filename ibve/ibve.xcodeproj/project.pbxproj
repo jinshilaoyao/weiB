@@ -24,6 +24,13 @@
 		EB3A8F121D585EBC009CC4CD /* CZRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB3A8F0C1D585EBC009CC4CD /* CZRefreshView.xib */; };
 		EB6F1D1D1D5B0C5E00CD362D /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6F1D1C1D5B0C5E00CD362D /* UIImage+Extension.swift */; };
 		EB6F1D1F1D5B268B00CD362D /* StatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6F1D1E1D5B268B00CD362D /* StatusPictureView.swift */; };
+		EB79C3A91D5DB5AA00451635 /* ComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB79C3A81D5DB5AA00451635 /* ComposeTypeView.swift */; };
+		EB79C3AB1D5DB5BC00451635 /* ComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB79C3AA1D5DB5BC00451635 /* ComposeTypeButton.swift */; };
+		EB79C3AF1D5DB6D800451635 /* ComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB79C3AE1D5DB6D800451635 /* ComposeTypeButton.xib */; };
+		EB79C3B11D5DB99700451635 /* CompostTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB79C3B01D5DB99700451635 /* CompostTypeView.xib */; };
+		EB79C3B31D5DBAB200451635 /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB79C3B21D5DBAB200451635 /* ComposeTextView.swift */; };
+		EB79C3B61D5DBAF900451635 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB79C3B41D5DBAF900451635 /* ComposeViewController.swift */; };
+		EB79C3B71D5DBAF900451635 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB79C3B51D5DBAF900451635 /* ComposeViewController.xib */; };
 		EB7CEE751D48909A001195AD /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7CEE741D48909A001195AD /* Common.swift */; };
 		EB7CEE781D4894C0001195AD /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7CEE771D4894C0001195AD /* OAuthViewController.swift */; };
 		EB7CEE7A1D489D86001195AD /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7CEE791D489D86001195AD /* UIBarButtonItem+Extensions.swift */; };
@@ -73,6 +80,7 @@
 		EBDF61861D360EA6008927A5 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = EBDF61851D360EA6008927A5 /* main.json */; };
 		EBDF61881D36223D008927A5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF61871D36223D008927A5 /* BaseViewController.swift */; };
 		EBDF618A1D362DF7008927A5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF61891D362DF7008927A5 /* NavigationController.swift */; };
+		EBE031BB1D5C4BB10030BCA1 /* StatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE031BA1D5C4BB10030BCA1 /* StatusToolBar.swift */; };
 		EBF0C9E31D4F1C5F009995D1 /* NetworkManager+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0C9E21D4F1C5F009995D1 /* NetworkManager+extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +104,13 @@
 		EB3A8F0C1D585EBC009CC4CD /* CZRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZRefreshView.xib; sourceTree = "<group>"; };
 		EB6F1D1C1D5B0C5E00CD362D /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		EB6F1D1E1D5B268B00CD362D /* StatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPictureView.swift; sourceTree = "<group>"; };
+		EB79C3A81D5DB5AA00451635 /* ComposeTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTypeView.swift; sourceTree = "<group>"; };
+		EB79C3AA1D5DB5BC00451635 /* ComposeTypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTypeButton.swift; sourceTree = "<group>"; };
+		EB79C3AE1D5DB6D800451635 /* ComposeTypeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeTypeButton.xib; sourceTree = "<group>"; };
+		EB79C3B01D5DB99700451635 /* CompostTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompostTypeView.xib; sourceTree = "<group>"; };
+		EB79C3B21D5DBAB200451635 /* ComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
+		EB79C3B41D5DBAF900451635 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		EB79C3B51D5DBAF900451635 /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
 		EB7CEE741D48909A001195AD /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		EB7CEE771D4894C0001195AD /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		EB7CEE791D489D86001195AD /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
@@ -161,6 +176,7 @@
 		EBDF61851D360EA6008927A5 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		EBDF61871D36223D008927A5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EBDF61891D362DF7008927A5 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		EBE031BA1D5C4BB10030BCA1 /* StatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusToolBar.swift; sourceTree = "<group>"; };
 		EBF0C9E21D4F1C5F009995D1 /* NetworkManager+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NetworkManager+extension.swift"; path = "Model/NetworkManager+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,6 +214,7 @@
 			children = (
 				EB17F7301D5AF490004C02C5 /* StatusCell.swift */,
 				EB6F1D1E1D5B268B00CD362D /* StatusPictureView.swift */,
+				EBE031BA1D5C4BB10030BCA1 /* StatusToolBar.swift */,
 				EB17F7341D5AF4C2004C02C5 /* StatusNormalCell.xib */,
 				EB17F7321D5AF4B3004C02C5 /* StatusRetweetedCell.xib */,
 			);
@@ -223,6 +240,36 @@
 				EB3A8F0C1D585EBC009CC4CD /* CZRefreshView.xib */,
 			);
 			path = CZRefreshControl;
+			sourceTree = "<group>";
+		};
+		EB79C3A31D5DB38200451635 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				EB79C3A51D5DB3A100451635 /* ComposeType */,
+				EB79C3A41D5DB38F00451635 /* view */,
+				EB79C3B41D5DBAF900451635 /* ComposeViewController.swift */,
+				EB79C3B51D5DBAF900451635 /* ComposeViewController.xib */,
+			);
+			name = Compose;
+			sourceTree = "<group>";
+		};
+		EB79C3A41D5DB38F00451635 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				EB79C3B21D5DBAB200451635 /* ComposeTextView.swift */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		EB79C3A51D5DB3A100451635 /* ComposeType */ = {
+			isa = PBXGroup;
+			children = (
+				EB79C3A81D5DB5AA00451635 /* ComposeTypeView.swift */,
+				EB79C3B01D5DB99700451635 /* CompostTypeView.xib */,
+				EB79C3AA1D5DB5BC00451635 /* ComposeTypeButton.swift */,
+				EB79C3AE1D5DB6D800451635 /* ComposeTypeButton.xib */,
+			);
+			name = ComposeType;
 			sourceTree = "<group>";
 		};
 		EB7CEE761D48948A001195AD /* OAuth */ = {
@@ -459,6 +506,7 @@
 		EBDF617E1D35ECC5008927A5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EB79C3A31D5DB38200451635 /* Compose */,
 				EB7E67DD1D3CB73A00C41B74 /* Profile */,
 				EB7E677A1D3CB6EC00C41B74 /* Discover */,
 				EB7E677B1D3CB6EC00C41B74 /* Home */,
@@ -570,7 +618,9 @@
 			files = (
 				EBCBC0511D59BE2D00127C92 /* CZEmoticonInputView.xib in Resources */,
 				EBCE6FA01D4733B400D1FDE6 /* NewFeatureView.xib in Resources */,
+				EB79C3AF1D5DB6D800451635 /* ComposeTypeButton.xib in Resources */,
 				EB17F7351D5AF4C2004C02C5 /* StatusNormalCell.xib in Resources */,
+				EB79C3B11D5DB99700451635 /* CompostTypeView.xib in Resources */,
 				EB3A8F121D585EBC009CC4CD /* CZRefreshView.xib in Resources */,
 				EBCE6FA21D4733CC00D1FDE6 /* WelcomeView.xib in Resources */,
 				EB17F7331D5AF4B3004C02C5 /* StatusRetweetedCell.xib in Resources */,
@@ -579,6 +629,7 @@
 				EBDF61751D35E3CC008927A5 /* LaunchScreen.storyboard in Resources */,
 				EB3A8F0F1D585EBC009CC4CD /* CZMeituanRefreshView.xib in Resources */,
 				EBCBC04B1D59BE2D00127C92 /* HMEmoticon.bundle in Resources */,
+				EB79C3B71D5DBAF900451635 /* ComposeViewController.xib in Resources */,
 				EBDF61721D35E3CC008927A5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -640,6 +691,7 @@
 			files = (
 				EB35BBF41D597D4F00E561F0 /* StatusViewModel.swift in Sources */,
 				EB7CEE7C1D48B356001195AD /* NetworkManager.swift in Sources */,
+				EB79C3AB1D5DB5BC00451635 /* ComposeTypeButton.swift in Sources */,
 				EB7E67D11D3CB73000C41B74 /* NSArray+Log.m in Sources */,
 				EB17F7371D5B08F5004C02C5 /* UIImageView+WebImageView.swift in Sources */,
 				EB7E67D61D3CB73000C41B74 /* NSString+CZPath.m in Sources */,
@@ -649,12 +701,15 @@
 				EBCBC04C1D59BE2D00127C92 /* CZEmoticon.swift in Sources */,
 				EB7E67D51D3CB73000C41B74 /* NSString+CZHash.m in Sources */,
 				EBAD3FA61D4754AD00557454 /* VisitorView.swift in Sources */,
+				EB79C3A91D5DB5AA00451635 /* ComposeTypeView.swift in Sources */,
 				EB7E67DF1D3CB82800C41B74 /* HomeViewController.swift in Sources */,
 				EBDF616B1D35E3CC008927A5 /* AppDelegate.swift in Sources */,
 				EBCBC0521D59BE2D00127C92 /* CZEmoticonLayout.swift in Sources */,
+				EB79C3B31D5DBAB200451635 /* ComposeTextView.swift in Sources */,
 				EB7E67DA1D3CB73000C41B74 /* UIScreen+CZAddition.m in Sources */,
 				EB7E67D91D3CB73000C41B74 /* UILabel+CZAddition.m in Sources */,
 				EB7E67D71D3CB73000C41B74 /* UIButton+CZAddition.m in Sources */,
+				EB79C3B61D5DBAF900451635 /* ComposeViewController.swift in Sources */,
 				EBCE6F9C1D47334A00D1FDE6 /* NewFeatureView.swift in Sources */,
 				EBA454B81D4709D1005F7A60 /* DiscoverViewController.swift in Sources */,
 				EB7E67D31D3CB73000C41B74 /* NSObject+CZRuntime.m in Sources */,
@@ -688,6 +743,7 @@
 				EBCBC0501D59BE2D00127C92 /* CZEmoticonInputView.swift in Sources */,
 				EB35BBF21D59779100E561F0 /* StatusListViewModel.swift in Sources */,
 				EB17F7311D5AF490004C02C5 /* StatusCell.swift in Sources */,
+				EBE031BB1D5C4BB10030BCA1 /* StatusToolBar.swift in Sources */,
 				EBDF618A1D362DF7008927A5 /* NavigationController.swift in Sources */,
 				EBDF61841D35F075008927A5 /* MainViewController.swift in Sources */,
 				EBDF61881D36223D008927A5 /* BaseViewController.swift in Sources */,

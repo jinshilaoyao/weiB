@@ -18,7 +18,7 @@ extension UIImage {
     /// - parameter backColor: 背景颜色
     ///
     /// - returns: 裁切后的图像
-    func cz_avatarImage(size: CGSize?, backColor: UIColor = UIColor.white(), lineColor: UIColor = UIColor.lightGray()) -> UIImage? {
+    func cz_avatarImage(size: CGSize?, backColor: UIColor = UIColor.white, lineColor: UIColor = UIColor.lightGray) -> UIImage? {
         
         var size = size
         if size == nil || size?.width == 0 {

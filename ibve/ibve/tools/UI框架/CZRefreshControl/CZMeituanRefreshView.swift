@@ -45,10 +45,10 @@ class CZMeituanRefreshView: CZRefreshView {
     override func awakeFromNib() {
         
         // 1. 房子
-        let bImage1 = #imageLiteral(resourceName: "icon_building_loading_1")
-        let bImage2 = #imageLiteral(resourceName: "icon_building_loading_2")
+        let bImage1 = UIImage(named: "icon_building_loading_1")
+        let bImage2 = UIImage(named: "icon_building_loading_2")
         
-        buildingIconView.image = UIImage.animatedImage(with: [bImage1, bImage2], duration: 0.5)
+        buildingIconView.image = UIImage.animatedImage(with: [bImage1!, bImage2!], duration: 0.5)
         
         // 2. 地球
         let anim = CABasicAnimation(keyPath: "transform.rotation")

@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupAdditions()
         
         window = UIWindow()
-        window?.backgroundColor = UIColor.white()
+        window?.backgroundColor = UIColor.white
         window?.rootViewController = MainViewController()
         window?.makeKeyAndVisible()
         
@@ -63,19 +63,21 @@ extension AppDelegate {
         AFNetworkActivityIndicatorManager.shared().isEnabled = true
         
         if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().requestAuthorization([.alert,.sound,.badge], completionHandler: { (success , error) in
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge], completionHandler: { (success , error) in
                 print("授权" + (success ? "成功" : "失败"))
             })
         } else {
             let notifySetting = UIUserNotificationSettings(types: [.alert,.sound,.badge], categories: nil)
-            UIApplication.shared().registerUserNotificationSettings(notifySetting)
+            UIApplication.shared.registerUserNotificationSettings(notifySetting)
         }
     }
     
     private func loadAppInfo() {
         DispatchQueue.global().async {
             
-            let url = Bundle.main().urlForResource("main.json", withExtension: nil)
+            let url = Bundle.main.url(forResource: "main.json", withExtension: nil)
+            
+            //let url = Bundle.main.urlForResource("main.json", withExtension: nil)
             
             let data = NSData(contentsOf: url!)
             

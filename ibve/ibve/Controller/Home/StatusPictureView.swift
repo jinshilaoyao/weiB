@@ -15,6 +15,8 @@ class StatusPictureView: UIView {
     var viewModel: StatusViewModel? {
         didSet {
             calViewSize()
+            
+            urls = viewModel?.picURLs
         }
     }
     
@@ -47,6 +49,25 @@ class StatusPictureView: UIView {
     private var urls: [StatusPicture]? {
         didSet {
             
+            for v in subviews {
+                v.isHidden = true
+            }
+
+            var index = 0
+            for url in urls ?? [] {
+                
+                let iv = subviews[index] as! UIImageView
+                
+                iv.cz_setImage(urlString: url.thumbnail_pic, placeholderImage: nil)
+                
+                // 判断是否是 gif，根据扩展名
+//                iv.subviews[0].isHidden = (((url.thumbnail_pic ?? "") as NSString).pathExtension.lowercased() != "gif")
+                
+                // 显示图像
+                iv.isHidden = false
+                
+                index += 1
+            }
         }
     }
     
@@ -61,21 +82,20 @@ extension StatusPictureView {
     
     func setupUI() {
         
-        backgroundColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
+        backgroundColor = UIColor.clear
         
         clipsToBounds = true
         
         let count = 3
         
-        let iv = UIImageView()
-        
-        iv.clipsToBounds = true
-        
-        iv.contentMode = .scaleAspectFill
-        
-        let rect = CGRect(x: 0, y: StatusPictureViewOutterMargin, width: StatusPictureItemWidth, height: StatusPictureItemWidth)
+        let rect = CGRect(x: 0, y: 0, width: StatusPictureItemWidth, height: StatusPictureItemWidth)
         
         for i in 0..<count * count {
+            let iv = UIImageView()
+            
+            iv.clipsToBounds = true
+            
+            iv.contentMode = .scaleAspectFill
             
             let row = CGFloat( i / count )
             
@@ -87,7 +107,6 @@ extension StatusPictureView {
             iv.frame = rect.offsetBy(dx: xOffset, dy: yOffset)
             
             addSubview(iv)
-            
         }
     }
 }

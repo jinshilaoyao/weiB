@@ -10,9 +10,9 @@ import UIKit
 
 class VisitorView: UIView {
     
-    lazy var registerButton: UIButton = UIButton.cz_textButton("register", fontSize: 16, normalColor: UIColor.orange(), highlightedColor: UIColor.black(), backgroundImageName: "common_button_white_disable")
+    lazy var registerButton: UIButton = UIButton.cz_textButton("register", fontSize: 16, normalColor: UIColor.orange, highlightedColor: UIColor.black, backgroundImageName: "common_button_white_disable")
     
-    lazy var loginButton: UIButton = UIButton.cz_textButton("login", fontSize: 16, normalColor: UIColor.darkGray(), highlightedColor: UIColor.black(), backgroundImageName: "common_button_white_disable")
+    lazy var loginButton: UIButton = UIButton.cz_textButton("login", fontSize: 16, normalColor: UIColor.darkGray, highlightedColor: UIColor.black, backgroundImageName: "common_button_white_disable")
     
     var visitorInfo: [String: String]? {
         didSet {
@@ -74,7 +74,7 @@ class VisitorView: UIView {
     private lazy var tipLabel: UILabel = UILabel.cz_label(
         withText: "关注一些人，回这里看看有什么惊喜关注一些人，回这里看看有什么惊喜",
         fontSize: 14,
-        color: UIColor.darkGray())
+        color: UIColor.darkGray)
 }
 
 extension VisitorView {

@@ -13,7 +13,7 @@ extension UIBarButtonItem {
     
     convenience init(title: String, fontSize: CGFloat = 16,target: AnyObject?, action: Selector, isBack: Bool = false) {
         
-        let btn: UIButton = UIButton.cz_textButton(title, fontSize: fontSize, normalColor: UIColor.darkGray(), highlightedColor: UIColor.orange())
+        let btn: UIButton = UIButton.cz_textButton(title, fontSize: fontSize, normalColor: UIColor.darkGray, highlightedColor: UIColor.orange)
         
         if isBack {
             let imageName = "navigationbar_back_withtext"

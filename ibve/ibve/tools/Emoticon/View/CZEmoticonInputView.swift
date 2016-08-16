@@ -37,7 +37,7 @@ class CZEmoticonInputView: UIView {
     }
     
     override func awakeFromNib() {
-        collectionView.backgroundColor = UIColor.white()
+        collectionView.backgroundColor = UIColor.white
         
         // 注册可重用 cell
         collectionView.register(CZEmoticonCell.self, forCellWithReuseIdentifier: cellId)
@@ -87,7 +87,7 @@ extension CZEmoticonInputView: UICollectionViewDelegate {
         center.x += scrollView.contentOffset.x
         
         // 2. 获取当前显示的 cell 的 indexPath
-        let paths = collectionView.indexPathsForVisibleItems()
+        let paths = collectionView.indexPathsForVisibleItems
         
         // 3. 判断中心点在哪一个 indexPath 上，在哪一个页面上
         var targetIndexPath: IndexPath?
@@ -116,7 +116,7 @@ extension CZEmoticonInputView: UICollectionViewDelegate {
         // 5. 设置分页控件
         // 总页数，不同的分组，页数不一样
         pageControl.numberOfPages = collectionView.numberOfItems(inSection: target.section)
-        pageControl.currentPage = target.item!
+        pageControl.currentPage = target.item
     }
 }
 
@@ -142,7 +142,7 @@ extension CZEmoticonInputView: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CZEmoticonCell
         
         // 2. 设置 cell - 传递对应页面的表情数组
-        cell.emoticons = CZEmoticonManager.shared.packages[indexPath.section].emoticon(page: indexPath.item!)
+        cell.emoticons = CZEmoticonManager.shared.packages[indexPath.section].emoticon(page: indexPath.item)
         
         // 设置代理 - 不适合用闭包
         cell.delegate = self
@@ -171,7 +171,7 @@ extension CZEmoticonInputView: CZEmoticonCellDelegate {
         }
         
         // 如果当前 collectionView 就是最近的分组，不添加最近使用的表情
-        let indexPath = collectionView.indexPathsForVisibleItems()[0]
+        let indexPath = collectionView.indexPathsForVisibleItems[0]
         if indexPath.section == 0 {
             return
         }

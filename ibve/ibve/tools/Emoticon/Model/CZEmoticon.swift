@@ -52,7 +52,7 @@ class CZEmoticon: NSObject {
         
         guard let directory = directory,
             png = png,
-            path = Bundle.main().pathForResource("HMEmoticon.bundle", ofType: nil),
+            path = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil),
             bundle = Bundle(path: path)
             else {
                 return nil
@@ -62,11 +62,11 @@ class CZEmoticon: NSObject {
     }
     
     /// 将当前的图像转换生成图片的属性文本
-    func imageText(font: UIFont) -> AttributedString {
-        
+    func imageText(font: UIFont) -> NSAttributedString {
+    
         // 1. 判断图像是否存在
         guard let image = image else {
-            return AttributedString(string: "")
+            return NSAttributedString(string: "")
         }
         
         // 2. 创建文本附件
@@ -80,7 +80,7 @@ class CZEmoticon: NSObject {
         attachment.bounds = CGRect(x: 0, y: -4, width: height, height: height)
         
         // 3. 返回图片属性文本
-        let attrStrM = NSMutableAttributedString(attributedString: AttributedString(attachment: attachment))
+        let attrStrM = NSMutableAttributedString(attributedString: NSAttributedString(attachment: attachment))
         
         // 设置字体属性
         attrStrM.addAttributes([NSFontAttributeName: font], range: NSRange(location: 0, length: 1))

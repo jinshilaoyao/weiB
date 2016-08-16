@@ -19,8 +19,8 @@ public protocol FFLabelDelegate: NSObjectProtocol {
 
 public class FFLabel: UILabel {
 
-    public var linkTextColor = UIColor.blue()
-    public var selectedBackgroudColor = UIColor.lightGray()
+    public var linkTextColor = UIColor.blue
+    public var selectedBackgroudColor = UIColor.lightGray
     public weak var delegate: FFLabelDelegate?
     
     // MARK: - override properties
@@ -30,7 +30,7 @@ public class FFLabel: UILabel {
         }
     }
     
-    override public var attributedText: AttributedString? {
+    override public var attributedText: NSAttributedString? {
         didSet {
             updateTextStorage()
         }
@@ -85,22 +85,23 @@ public class FFLabel: UILabel {
     
     /// use regex check all link ranges
     private let patterns = ["[a-zA-Z]*://[a-zA-Z0-9/\\.]*", "#.*?#", "@[\\u4e00-\\u9fa5a-zA-Z0-9_-]*"]
-    private func regexLinkRanges(_ attrString: AttributedString) {
+    private func regexLinkRanges(_ attrString: NSAttributedString) {
         linkRanges.removeAll()
         let regexRange = NSRange(location: 0, length: attrString.string.characters.count)
         
         for pattern in patterns {
-            let regex = try! RegularExpression(pattern: pattern, options: RegularExpression.Options.dotMatchesLineSeparators)
-            let results = regex.matches(in: attrString.string, options: RegularExpression.MatchingOptions(rawValue: 0), range: regexRange)
+            
+            let regex = try! NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options.dotMatchesLineSeparators)
+            let results = regex.matches(in: attrString.string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: regexRange)
             
             for r in results {
-                linkRanges.append(r.range(at: 0))
+                linkRanges.append(r.rangeAt(0))
             }
         }
     }
     
     /// add line break mode
-    private func addLineBreak(_ attrString: AttributedString) -> NSMutableAttributedString {
+    private func addLineBreak(_ attrString: NSAttributedString) -> NSMutableAttributedString {
         let attrStringM = NSMutableAttributedString(attributedString: attrString)
         
         if attrStringM.length == 0 {
@@ -172,9 +173,14 @@ public class FFLabel: UILabel {
             delegate?.labelDidSelectedLinkText?(label: self, text: text)
             
             let when = DispatchTime.now() + Double(Int64(0.25 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-            DispatchQueue.main.after(when: when) {
+
+            DispatchQueue.main.asyncAfter(deadline: when, execute: { 
                 self.modifySelectedAttribute(false)
-            }
+            })
+            
+           // DispatchQueue.main.after(when: when) {
+               // self.modifySelectedAttribute(false)
+           // }
         }
     }
     
@@ -194,7 +200,7 @@ public class FFLabel: UILabel {
         if isSet {
             attributes[NSBackgroundColorAttributeName] = selectedBackgroudColor
         } else {
-            attributes[NSBackgroundColorAttributeName] = UIColor.clear()
+            attributes[NSBackgroundColorAttributeName] = UIColor.clear
             selectedRange = nil
         }
         

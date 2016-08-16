@@ -25,16 +25,20 @@ class MainViewController: UITabBarController {
         
         delegate = self
         
-        NotificationCenter.default().addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: nil)
     }
     
     deinit {
         timer?.invalidate()
         
-        NotificationCenter.default().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc private func composeStatus() {
+        
+        let v = ComposeTypeView()
+        
+        
         
     }
     
@@ -52,8 +56,8 @@ class MainViewController: UITabBarController {
             
             when = DispatchTime.now() + 2
         }
-        
-        DispatchQueue.main.after(when: when) { 
+
+        DispatchQueue.main.asyncAfter(deadline: when){
             SVProgressHUD.setDefaultMaskType(.clear)
             
             let nav = UINavigationController(rootViewController: OAuthViewController())
@@ -91,7 +95,7 @@ extension MainViewController {
     
     private var isNewVersion: Bool {
         
-        let currentVersion = Bundle.main().infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
         
         print("当前版本" + currentVersion)
         
@@ -129,7 +133,7 @@ extension MainViewController {
         var data = NSData(contentsOfFile: jsonPath)
         
         if data == nil {
-            let path = Bundle.main().pathForResource("main.json", ofType: nil)
+            let path = Bundle.main.path(forResource: "main.json", ofType: nil)
             
             data = NSData(contentsOfFile: path!)
         }
@@ -152,7 +156,7 @@ extension MainViewController {
             title = dict["title"] as? String,
             imageName = dict["imageName"] as? String,
             visitorDict = dict["visitorInfo"] as? [String: String],
-            cls = NSClassFromString(Bundle.main().namespace + "." + clsName) as? BaseViewController.Type
+            cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? BaseViewController.Type
             else { return UIViewController() }
         
         let vc = cls.init()
@@ -164,7 +168,7 @@ extension MainViewController {
         vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
         
-        vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.orange()], for: .highlighted)
+        vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.orange], for: .highlighted)
         
         vc.tabBarItem.setTitleTextAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 12)], for: UIControlState(rawValue: 0))
         

@@ -35,9 +35,9 @@ class StatusViewModel {
     }
     
     /// 微博正文的属性文本
-    var statusAttrText: AttributedString?
+    var statusAttrText: NSAttributedString?
     /// 转发文字的属性文本
-    var retweetedAttrText: AttributedString?
+    var retweetedAttrText: NSAttributedString?
     
     /// 行高
     var rowHeight: CGFloat = 0
@@ -104,10 +104,16 @@ class StatusViewModel {
         
         height = 2 * margin + iconHeight + margin
         
+        // 2. 正文属性文本的高度
+        if let text = statusAttrText {
+            
+            height += text.boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], context: nil).height
+        }
+        
         // 3. 判断是否转发微博
         if status.retweeted_status != nil {
             
-            height += 2 * margin
+            height +=  margin
             
             // 转发文本的高度 - 一定用 retweetedText，拼接了 @用户名:微博文字
             if let text = retweetedAttrText {

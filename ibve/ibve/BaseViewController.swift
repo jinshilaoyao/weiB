@@ -29,13 +29,13 @@ class BaseViewController: UIViewController {
         
         NetworkManager.shared.userLogin ? loadData() : ()
         
-        NotificationCenter.default().addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: UserLoginSuccessedNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: UserLoginSuccessedNotification), object: nil)
         
         
     }
     
     deinit {
-        NotificationCenter.default().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     override var title: String? {
@@ -56,7 +56,7 @@ class BaseViewController: UIViewController {
         
         view = nil
         
-        NotificationCenter.default().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 }
 extension BaseViewController {
@@ -114,7 +114,7 @@ extension BaseViewController {
     }
     
     @objc private func login() {
-        NotificationCenter.default().post(name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: nil, userInfo: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: nil, userInfo: nil)
     }
     
     @objc private func register() {
@@ -130,9 +130,9 @@ extension BaseViewController {
         
         navigationBar.barTintColor = #colorLiteral(red: 0.9647058824, green: 0.9647058824, blue: 0.9647058824, alpha: 1)
         
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.darkGray()]
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.darkGray]
         
-        navigationBar.tintColor = UIColor.orange()
+        navigationBar.tintColor = UIColor.orange
         
     }
 }
@@ -163,7 +163,7 @@ extension BaseViewController: UITableViewDelegate,UITableViewDataSource {
         if row == (count - 1) && !isPullup {
             print("上拉刷新")
             
-            isPullup = true
+            self.isPullup = true
             
             loadData()
         }

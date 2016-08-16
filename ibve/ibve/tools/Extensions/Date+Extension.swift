@@ -32,7 +32,7 @@ extension Date {
     var cz_dateDescription: String {
         
         // 1. 判断日期是否是今天
-        if calendar().isDateInToday(self) {
+        if calendar.isDateInToday(self) {
             
             let delta = -Int(self.timeIntervalSinceNow)
             
@@ -50,13 +50,13 @@ extension Date {
         // 2. 其他天
         var fmt = " HH:mm"
         
-        if calendar().isDateInYesterday(self) {
+        if calendar.isDateInYesterday(self) {
             fmt = "昨天" + fmt
         } else {
             fmt = "MM-dd" + fmt
             
-            let year = calendar().component(.year, from: self)
-            let thisYear = calendar().component(.year, from: Date())
+            let year = calendar.component(.year, from: self)
+            let thisYear = calendar.component(.year, from: Date())
             
             if year != thisYear {
                 fmt = "yyyy-" + fmt

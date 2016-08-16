@@ -33,13 +33,13 @@ class NetworkManager: AFHTTPSessionManager {
     }
     
     
-    func tokenRequest(method: HTTPMethod = .GET, URLSrting: String, parameters: [String: AnyObject]?, name: String? = nil, data:Data? = nil, completion: (json: AnyObject?, isSuccess: Bool) ->()) {
+    func tokenRequest(method: HTTPMethod = .GET, URLSrting: String, parameters: [String: AnyObject]?, name: String? = nil, data: Data? = nil, completion: (json: AnyObject?, isSuccess: Bool) ->()) {
         
         guard let token = userAccount.access_token else {
             
             print("没有 token 需要登陆")
 
-            NotificationCenter.default().post(name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: nil)
             
             completion(json: nil, isSuccess: false)
             
@@ -53,7 +53,7 @@ class NetworkManager: AFHTTPSessionManager {
         
         parameters?["access_token"] = token
         
-        if let name = name, data = data {
+        if let name = name, let data = data {
             
             
             
@@ -70,12 +70,12 @@ class NetworkManager: AFHTTPSessionManager {
             completion(json: json, isSuccess: true)
         }
         
-        let failure = { (task: URLSessionTask?, error: NSError) -> () in
+        let failure = { (task: URLSessionDataTask?, error: Error) -> () in
             
             if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
                 print("Token 过期了")
                 
-                NotificationCenter.default().post(name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: "bad token")
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: "bad token")
             }
             
             completion(json: nil, isSuccess: false)
@@ -83,6 +83,7 @@ class NetworkManager: AFHTTPSessionManager {
         
         if method == .GET {
             get(URLString, parameters: parameters, progress: nil, success: success, failure: failure)
+            
         } else {
             post(URLString, parameters: parameters, progress: nil, success: success, failure: failure)
         }

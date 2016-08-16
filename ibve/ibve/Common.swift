@@ -32,5 +32,5 @@ let StatusPictureViewInnerMargin = CGFloat(3)
 // 视图的宽度的宽度
 let StatusPictureViewWidth = UIScreen.cz_screenWidth() - 2 * StatusPictureViewOutterMargin
 // 每个 Item 默认的宽度
-let StatusPictureItemWidth = (StatusPictureViewWidth - 2 * StatusPictureViewInnerMargin) / 3
+let StatusPictureItemWidth = (StatusPictureViewWidth - 4 * StatusPictureViewInnerMargin) / 3
 

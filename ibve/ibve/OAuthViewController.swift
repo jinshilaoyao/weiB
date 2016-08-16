@@ -60,7 +60,7 @@ class OAuthViewController: UIViewController {
 
 extension OAuthViewController: UIWebViewDelegate {
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        if request.url?.absoluteString?.hasPrefix(RedirectURI) == false {
+        if request.url?.absoluteString.hasPrefix(RedirectURI) == false {
             return true
         }
         
@@ -78,7 +78,7 @@ extension OAuthViewController: UIWebViewDelegate {
             if !isSuccess {
                 SVProgressHUD.showInfo(withStatus: "bad net")
             } else {
-                NotificationCenter.default().post(name: NSNotification.Name(rawValue: UserLoginSuccessedNotification), object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: UserLoginSuccessedNotification), object: nil)
                 
                 self.close()
                 

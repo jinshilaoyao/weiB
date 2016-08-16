@@ -22,7 +22,7 @@ class WelcomeView: UIView {
         guard let v = nib.instantiate(withOwner: nil, options: nil)[0] as? WelcomeView else {
             return WelcomeView()
         }
-        v.frame = UIScreen.main().bounds
+        v.frame = UIScreen.main.bounds
         
         return v
     }

@@ -36,6 +36,9 @@ class StatusCell: UITableViewCell {
     
     @IBOutlet weak var retweetedLabel: FFLabel?
     
+    @IBOutlet weak var toolBar: StatusToolBar!
+    
+    
     weak var delegate: StatusCellDelegate?
     
     var viewModel: StatusViewModel? {
@@ -53,9 +56,13 @@ class StatusCell: UITableViewCell {
             
             statusLabel.attributedText = viewModel?.statusAttrText
             
+            retweetedLabel?.attributedText = viewModel?.retweetedAttrText
+            
             pictureView.viewModel = viewModel
             
             vipIconView.image = viewModel?.vipIcon
+            
+            toolBar.viewModel = viewModel
         }
     }
     
@@ -71,7 +78,7 @@ class StatusCell: UITableViewCell {
         self.layer.shouldRasterize = true
         
         // 使用 `栅格化` 必须注意指定分辨率
-        self.layer.rasterizationScale = UIScreen.main().scale
+        self.layer.rasterizationScale = UIScreen.main.scale
         
         statusLabel.delegate = self
         retweetedLabel?.delegate = self
