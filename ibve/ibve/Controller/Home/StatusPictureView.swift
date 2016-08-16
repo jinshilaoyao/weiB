@@ -58,10 +58,12 @@ class StatusPictureView: UIView {
                 
                 let iv = subviews[index] as! UIImageView
                 
+ 
+                
                 iv.cz_setImage(urlString: url.thumbnail_pic, placeholderImage: nil)
                 
                 // 判断是否是 gif，根据扩展名
-//                iv.subviews[0].isHidden = (((url.thumbnail_pic ?? "") as NSString).pathExtension.lowercased() != "gif")
+                iv.subviews[0].isHidden = (((url.thumbnail_pic ?? "") as NSString).pathExtension.lowercased() != "gif")
                 
                 // 显示图像
                 iv.isHidden = false
@@ -101,11 +103,13 @@ extension StatusPictureView {
             
             let col = CGFloat( i % count )
             
-            let xOffset = row * (StatusPictureItemWidth + StatusPictureViewInnerMargin)
-            let yOffset = col * (StatusPictureItemWidth + StatusPictureViewInnerMargin)
             
-            iv.frame = rect.offsetBy(dx: ((i == 0) ? xOffset - 12 : xOffset), dy: yOffset)
+            let xOffset = col * (StatusPictureItemWidth + StatusPictureViewInnerMargin)
+            let yOffset = row * (StatusPictureItemWidth + StatusPictureViewInnerMargin)
             
+            iv.frame = rect.offsetBy(dx: xOffset, dy: yOffset)
+            
+            //print("\(row) -- \(col) -- \(iv.frame)")
             addSubview(iv)
             
             iv.isUserInteractionEnabled = true
@@ -114,8 +118,39 @@ extension StatusPictureView {
             
             iv.addGestureRecognizer(tap)
             
+            iv.tag = i
+            
+            addGifView(iv: iv)
         }
     }
+    
+    private func addGifView(iv: UIImageView) {
+        
+        let gifImageView = UIImageView(image: UIImage(named: "timeline_image_gif"))
+        
+        iv.addSubview(gifImageView)
+        
+        // 自动布局
+        gifImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        iv.addConstraint(NSLayoutConstraint(
+            item: gifImageView,
+            attribute: .right,
+            relatedBy: .equal,
+            toItem: iv,
+            attribute: .right,
+            multiplier: 1.0,
+            constant: 0))
+        iv.addConstraint(NSLayoutConstraint(
+            item: gifImageView,
+            attribute: .bottom,
+            relatedBy: .equal,
+            toItem: iv,
+            attribute: .bottom,
+            multiplier: 1.0,
+            constant: 0))
+    }
+
     
     @objc private func tapImageView(tap: UITapGestureRecognizer) {
         

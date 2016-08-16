@@ -54,6 +54,11 @@
 		EBA454BA1D4709E7005F7A60 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA454B91D4709E7005F7A60 /* ProfileViewController.swift */; };
 		EBAD3FA61D4754AD00557454 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAD3FA51D4754AD00557454 /* VisitorView.swift */; };
 		EBC23D811D62E715003D5BED /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC23D801D62E715003D5BED /* WebViewController.swift */; };
+		EBC23D8E1D62FE49003D5BED /* HMPhotoBrowserAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC23D851D62FE49003D5BED /* HMPhotoBrowserAnimator.m */; };
+		EBC23D8F1D62FE49003D5BED /* HMPhotoBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC23D871D62FE49003D5BED /* HMPhotoBrowserController.m */; };
+		EBC23D901D62FE49003D5BED /* HMPhotoBrowserPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC23D891D62FE49003D5BED /* HMPhotoBrowserPhotos.m */; };
+		EBC23D911D62FE49003D5BED /* HMPhotoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC23D8B1D62FE49003D5BED /* HMPhotoProgressView.m */; };
+		EBC23D921D62FE49003D5BED /* HMPhotoViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC23D8D1D62FE49003D5BED /* HMPhotoViewerController.m */; };
 		EBCBC0341D59AB1600127C92 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0331D59AB1600127C92 /* Status.swift */; };
 		EBCBC0361D59ABEF00127C92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0351D59ABEF00127C92 /* User.swift */; };
 		EBCBC0381D59AC0100127C92 /* StatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBC0371D59AC0100127C92 /* StatusPicture.swift */; };
@@ -149,6 +154,16 @@
 		EBA454B91D4709E7005F7A60 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EBAD3FA51D4754AD00557454 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		EBC23D801D62E715003D5BED /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		EBC23D841D62FE49003D5BED /* HMPhotoBrowserAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserAnimator.h; sourceTree = "<group>"; };
+		EBC23D851D62FE49003D5BED /* HMPhotoBrowserAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoBrowserAnimator.m; sourceTree = "<group>"; };
+		EBC23D861D62FE49003D5BED /* HMPhotoBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserController.h; sourceTree = "<group>"; };
+		EBC23D871D62FE49003D5BED /* HMPhotoBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoBrowserController.m; sourceTree = "<group>"; };
+		EBC23D881D62FE49003D5BED /* HMPhotoBrowserPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserPhotos.h; sourceTree = "<group>"; };
+		EBC23D891D62FE49003D5BED /* HMPhotoBrowserPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoBrowserPhotos.m; sourceTree = "<group>"; };
+		EBC23D8A1D62FE49003D5BED /* HMPhotoProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoProgressView.h; sourceTree = "<group>"; };
+		EBC23D8B1D62FE49003D5BED /* HMPhotoProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoProgressView.m; sourceTree = "<group>"; };
+		EBC23D8C1D62FE49003D5BED /* HMPhotoViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoViewerController.h; sourceTree = "<group>"; };
+		EBC23D8D1D62FE49003D5BED /* HMPhotoViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoViewerController.m; sourceTree = "<group>"; };
 		EBCBC0331D59AB1600127C92 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		EBCBC0351D59ABEF00127C92 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EBCBC0371D59AC0100127C92 /* StatusPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPicture.swift; sourceTree = "<group>"; };
@@ -314,6 +329,7 @@
 		EB7E67AD1D3CB73000C41B74 /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				EBC23D831D62FE49003D5BED /* PhotoBrowser */,
 				EB3A8F051D585EBC009CC4CD /* UI框架 */,
 				EB7E67B01D3CB73000C41B74 /* ibve-Bridging-Header.h */,
 				EB7E67AE1D3CB73000C41B74 /* Additions */,
@@ -421,6 +437,23 @@
 				EBAD3FA51D4754AD00557454 /* VisitorView.swift */,
 			);
 			name = VisitorView;
+			sourceTree = "<group>";
+		};
+		EBC23D831D62FE49003D5BED /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				EBC23D841D62FE49003D5BED /* HMPhotoBrowserAnimator.h */,
+				EBC23D851D62FE49003D5BED /* HMPhotoBrowserAnimator.m */,
+				EBC23D861D62FE49003D5BED /* HMPhotoBrowserController.h */,
+				EBC23D871D62FE49003D5BED /* HMPhotoBrowserController.m */,
+				EBC23D881D62FE49003D5BED /* HMPhotoBrowserPhotos.h */,
+				EBC23D891D62FE49003D5BED /* HMPhotoBrowserPhotos.m */,
+				EBC23D8A1D62FE49003D5BED /* HMPhotoProgressView.h */,
+				EBC23D8B1D62FE49003D5BED /* HMPhotoProgressView.m */,
+				EBC23D8C1D62FE49003D5BED /* HMPhotoViewerController.h */,
+				EBC23D8D1D62FE49003D5BED /* HMPhotoViewerController.m */,
+			);
+			path = PhotoBrowser;
 			sourceTree = "<group>";
 		};
 		EBCBC03F1D59BE2D00127C92 /* Model */ = {
@@ -694,6 +727,7 @@
 			files = (
 				EB35BBF41D597D4F00E561F0 /* StatusViewModel.swift in Sources */,
 				EB7CEE7C1D48B356001195AD /* NetworkManager.swift in Sources */,
+				EBC23D8E1D62FE49003D5BED /* HMPhotoBrowserAnimator.m in Sources */,
 				EB79C3AB1D5DB5BC00451635 /* ComposeTypeButton.swift in Sources */,
 				EB7E67D11D3CB73000C41B74 /* NSArray+Log.m in Sources */,
 				EB17F7371D5B08F5004C02C5 /* UIImageView+WebImageView.swift in Sources */,
@@ -713,14 +747,17 @@
 				EB7E67D91D3CB73000C41B74 /* UILabel+CZAddition.m in Sources */,
 				EB7E67D71D3CB73000C41B74 /* UIButton+CZAddition.m in Sources */,
 				EB79C3B61D5DBAF900451635 /* ComposeViewController.swift in Sources */,
+				EBC23D8F1D62FE49003D5BED /* HMPhotoBrowserController.m in Sources */,
 				EBCE6F9C1D47334A00D1FDE6 /* NewFeatureView.swift in Sources */,
 				EBA454B81D4709D1005F7A60 /* DiscoverViewController.swift in Sources */,
 				EB7E67D31D3CB73000C41B74 /* NSObject+CZRuntime.m in Sources */,
 				EBCBC0541D59BE2D00127C92 /* CZEmoticonToolbar.swift in Sources */,
 				EB7E67D41D3CB73000C41B74 /* NSString+CZBase64.m in Sources */,
 				EBCBC03C1D59AE0500127C92 /* Date+Extension.swift in Sources */,
+				EBC23D901D62FE49003D5BED /* HMPhotoBrowserPhotos.m in Sources */,
 				EB7CEE781D4894C0001195AD /* OAuthViewController.swift in Sources */,
 				EB3A8F101D585EBC009CC4CD /* CZRefreshControl.swift in Sources */,
+				EBC23D921D62FE49003D5BED /* HMPhotoViewerController.m in Sources */,
 				EBCBC03A1D59ADB400127C92 /* String+Extension.swift in Sources */,
 				EBA454B61D4709B6005F7A60 /* MessageViewController.swift in Sources */,
 				EB7E67DC1D3CB73000C41B74 /* UIViewController+CZAddition.m in Sources */,
@@ -752,6 +789,7 @@
 				EBDF61841D35F075008927A5 /* MainViewController.swift in Sources */,
 				EBDF61881D36223D008927A5 /* BaseViewController.swift in Sources */,
 				EBCBC04A1D59BE2D00127C92 /* CZEmoticonManager.swift in Sources */,
+				EBC23D911D62FE49003D5BED /* HMPhotoProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,9 +25,9 @@ class StatusListViewModel {
             return
         }
         
-        let since_id = pullUp ? Int64(0) : 0
+        let since_id = pullUp ? 0 : (statusList.first?.status.id ?? 0)
         
-        let max_id = !pullUp ? Int64(0) : 0
+        let max_id = !pullUp ? 0 : (statusList.last?.status.id ?? 0)
         
         StatusListDAL.loadStatus(since_id: since_id, max_id: max_id) { (list, isSuccess) in
             

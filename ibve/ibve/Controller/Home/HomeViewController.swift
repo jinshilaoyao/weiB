@@ -20,7 +20,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(browserPhoto), name: StatusCellBrowserPhotoNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(browserPhoto), name: NSNotification.Name(rawValue: StatusCellBrowserPhotoNotification), object: nil)
         
     }
     
@@ -30,7 +30,22 @@ class HomeViewController: BaseViewController {
     
     
     @objc private func browserPhoto(n: Notification) {
+        // 1. 从 通知的 userInfo 提取参数
+        guard let selectedIndex = n.userInfo?[StatusCellBrowserPhotoSelectedIndexKey] as? Int,
+            let urls = n.userInfo?[StatusCellBrowserPhotoURLsKey] as? [String],
+            let imageViewList = n.userInfo?[StatusCellBrowserPhotoImageViewsKey] as? [UIImageView]
+            else {
+                return
+        }
         
+        // 2. 展现照片浏览控制器
+        let vc = HMPhotoBrowserController.photoBrowser(
+            withSelectedIndex: selectedIndex,
+            urls: urls,
+            parentImageViews: imageViewList)
+        
+        present(vc, animated: true, completion: nil)
+
     }
     
     override func loadData() {
