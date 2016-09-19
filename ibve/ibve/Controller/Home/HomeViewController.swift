@@ -15,7 +15,7 @@ private let retweetedCellId = "retweetedCellId"
 
 class HomeViewController: BaseViewController {
 
-    private lazy var listViewModel = StatusListViewModel()
+    fileprivate lazy var listViewModel = StatusListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

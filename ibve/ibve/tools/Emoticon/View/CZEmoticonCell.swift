@@ -85,14 +85,14 @@ class CZEmoticonCell: UICollectionViewCell {
     
     // MARK: - 监听方法
     /// 选中表情按钮
-    @objc private func selectedEmoticonButton(button: UIButton) {
+    @objc fileprivate func selectedEmoticonButton(button: UIButton) {
         
         // 1. 取 tag 0~20 20 对应的是删除按钮
         let tag = button.tag
         
         // 2. 根据 tag 判断是否是删除按钮，如果不是删除按钮，取得表情
         var em: CZEmoticon?
-        if tag < emoticons?.count {
+        if tag < (emoticons?.count)! {
             em = emoticons?[tag]
         }
         
@@ -103,7 +103,7 @@ class CZEmoticonCell: UICollectionViewCell {
     
     /// 长按手势识别 - 是一个非常非常重要的手势
     /// 可以保证一个对象监听两种点击手势！而且不需要考虑解决手势冲突！
-    @objc private func longGesture(gesture: UILongPressGestureRecognizer) {
+    @objc fileprivate func longGesture(gesture: UILongPressGestureRecognizer) {
         
         // 测试添加提示视图
         // addSubview(tipView)
@@ -133,7 +133,7 @@ class CZEmoticonCell: UICollectionViewCell {
             tipView.center = center
             
             // 设置提示视图的表情模型
-            if button.tag < emoticons?.count {
+            if button.tag < (emoticons?.count)! {
                 tipView.emoticon = emoticons?[button.tag]
             }
         case .ended:

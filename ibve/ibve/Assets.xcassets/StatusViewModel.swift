@@ -47,7 +47,11 @@ class StatusViewModel {
         self.status = model
         
         // 直接计算出会员图标/会员等级 0-6
-        if model.user?.mbrank > 0 && model.user?.mbrank < 7 {
+        guard let number = model.user?.mbrank else {
+            return
+        }
+        
+        if number > 0 && number < 7 {
             let imageName = "common_icon_membership_level\(model.user?.mbrank ?? 1)"
             
             memberIcon = UIImage(named: imageName)

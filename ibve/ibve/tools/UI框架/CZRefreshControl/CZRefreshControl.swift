@@ -27,9 +27,9 @@ class CZRefreshControl: UIControl {
 
     // MARK: - 属性
     /// 刷新控件的父视图，下拉刷新控件应该适用于 UITableView / UICollectionView
-    private weak var scrollView: UIScrollView?
+    fileprivate weak var scrollView: UIScrollView?
     /// 刷新视图
-    private lazy var refreshView: CZRefreshView = CZRefreshView.refreshView()
+    fileprivate lazy var refreshView: CZRefreshView = CZRefreshView.refreshView()
     
     // MARK: - 构造函数
     init() {
@@ -81,58 +81,61 @@ class CZRefreshControl: UIControl {
     // 观察者模式，在不需要的时候，都需要释放
     // - 通知中心：如果不释放，什么也不会发生，但是会有内存泄漏，会有多次注册的可能！
     // - KVO：如果不释放，会崩溃！
-    override func observeValue(forKeyPath keyPath: String?, of object: AnyObject?, change: [NSKeyValueChangeKey : AnyObject]?, context: UnsafeMutablePointer<Void>?) {
-        
-        // contentOffset 的 y 值跟 contentInset 的 top 有关
-        //print(scrollView?.contentOffset)
-        
-        guard let sv = scrollView else {
-            return
-        }
-        
-        // 初始高度就应该是 0
-        let height = -(sv.contentInset.top + sv.contentOffset.y)
-        
-        if height < 0 {
-            return
-        }
-        
-        // 可以根据高度设置刷新控件的 frame
-        self.frame = CGRect(x: 0,
-                            y: -height,
-                            width: sv.bounds.width,
-                            height: height)
-        
-        // print(height)
-        
-        // --- 传递父视图高度，如果正在刷新中，不传递
-        // --- 把代码放在`最合适`的位置！
-        if refreshView.refreshState != .WillRefresh {
-            refreshView.parentViewHeight = height
-        }
-        
-        // 判断临界点 - 只需要判断一次
-        if sv.isDragging {
-            
-            if height > CZRefreshOffset && (refreshView.refreshState == .Normal) {
-                print("放手刷新")
-                refreshView.refreshState = .Pulling
-            } else if height <= CZRefreshOffset && (refreshView.refreshState == .Pulling) {
-                print("继续使劲...")
-                refreshView.refreshState = .Normal
-            }
-        } else {
-            // 放手 - 判断是否超过临界点
-            if refreshView.refreshState == .Pulling {
-                print("准备开始刷新")
-                
-                beginRefreshing()
-                
-                // 发送刷新数据事件
-                sendActions(for: .valueChanged)
-            }
-        }
-    }
+    
+    
+    
+//    override func observeValue(forKeyPath keyPath: String?, of object: AnyObject?, change: [NSKeyValueChangeKey : AnyObject]?, context: UnsafeMutableRawPointer) {
+//        
+//        // contentOffset 的 y 值跟 contentInset 的 top 有关
+//        //print(scrollView?.contentOffset)
+//        
+//        guard let sv = scrollView else {
+//            return
+//        }
+//        
+//        // 初始高度就应该是 0
+//        let height = -(sv.contentInset.top + sv.contentOffset.y)
+//        
+//        if height < 0 {
+//            return
+//        }
+//        
+//        // 可以根据高度设置刷新控件的 frame
+//        self.frame = CGRect(x: 0,
+//                            y: -height,
+//                            width: sv.bounds.width,
+//                            height: height)
+//        
+//        // print(height)
+//        
+//        // --- 传递父视图高度，如果正在刷新中，不传递
+//        // --- 把代码放在`最合适`的位置！
+//        if refreshView.refreshState != .WillRefresh {
+//            refreshView.parentViewHeight = height
+//        }
+//        
+//        // 判断临界点 - 只需要判断一次
+//        if sv.isDragging {
+//            
+//            if height > CZRefreshOffset && (refreshView.refreshState == .Normal) {
+//                print("放手刷新")
+//                refreshView.refreshState = .Pulling
+//            } else if height <= CZRefreshOffset && (refreshView.refreshState == .Pulling) {
+//                print("继续使劲...")
+//                refreshView.refreshState = .Normal
+//            }
+//        } else {
+//            // 放手 - 判断是否超过临界点
+//            if refreshView.refreshState == .Pulling {
+//                print("准备开始刷新")
+//                
+//                beginRefreshing()
+//                
+//                // 发送刷新数据事件
+//                sendActions(for: .valueChanged)
+//            }
+//        }
+//    }
     
     /// 开始刷新
     func beginRefreshing() {
@@ -155,7 +158,7 @@ class CZRefreshControl: UIControl {
         var inset = sv.contentInset
         inset.top += CZRefreshOffset
         
-        sv.contentInset = inset
+//        sv.contentInset = inset
         
         // 设置刷新视图的父视图高度
         refreshView.parentViewHeight = CZRefreshOffset
@@ -190,7 +193,7 @@ class CZRefreshControl: UIControl {
 
 extension CZRefreshControl {
     
-    private func setupUI() {
+    fileprivate func setupUI() {
         backgroundColor = superview?.backgroundColor
         
         // 设置超出边界不显示

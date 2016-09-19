@@ -30,7 +30,7 @@ class WelcomeView: UIView {
     override func awakeFromNib() {
         
         guard let urlstring = NetworkManager.shared.userAccount.avatar_large,
-            url = URL(string: urlstring) else {
+              let url = URL(string: urlstring) else {
             return
         }
         

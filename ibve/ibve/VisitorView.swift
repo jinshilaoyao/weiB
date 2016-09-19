@@ -17,7 +17,7 @@ class VisitorView: UIView {
     var visitorInfo: [String: String]? {
         didSet {
             
-            guard let imageName = visitorInfo?["imageName"],message = visitorInfo?["message"] else {
+            guard let imageName = visitorInfo?["imageName"],let message = visitorInfo?["message"] else {
                 return
             }
             
@@ -45,7 +45,7 @@ class VisitorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func startAnimation() {
+    fileprivate func startAnimation() {
         
         let anim = CABasicAnimation(keyPath: "transform,rotation")
         
@@ -62,16 +62,16 @@ class VisitorView: UIView {
     // MARK: - 私有控件
     /// 懒加载属性只有调用 UIKit 控件的指定构造函数，其他都需要使用类型
     /// 图像视图
-    private lazy var iconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
+    fileprivate lazy var iconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
     
     /// 遮罩图像 - 不要使用 maskView
-    private lazy var maskIconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_mask_smallicon"))
+    fileprivate lazy var maskIconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_mask_smallicon"))
     
     /// 小房子
-    private lazy var houseIconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_house"))
+    fileprivate lazy var houseIconView: UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_house"))
     
     /// 提示标签
-    private lazy var tipLabel: UILabel = UILabel.cz_label(
+    fileprivate lazy var tipLabel: UILabel = UILabel.cz_label(
         withText: "关注一些人，回这里看看有什么惊喜关注一些人，回这里看看有什么惊喜",
         fontSize: 14,
         color: UIColor.darkGray)
@@ -79,7 +79,7 @@ class VisitorView: UIView {
 
 extension VisitorView {
     
-    private func setupUI() {
+    fileprivate func setupUI() {
         
         backgroundColor = #colorLiteral(red: 0.9294117647, green: 0.9294117647, blue: 0.9294117647, alpha: 1)
         
@@ -134,7 +134,7 @@ extension VisitorView {
         
         
         let viewDict = ["maskIconView":maskIconView,
-                        "registerButton": registerButton]
+                        "registerButton": registerButton] as [String : Any]
         let metrics = ["spacing": 20]
         
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[maskIconView]-0-|", options: [], metrics: nil, views: viewDict))

@@ -16,11 +16,11 @@ class StatusListViewModel {
     
     lazy var statusList = [StatusViewModel]()
     
-    func loadStatus(pullUp: Bool,completion: (isSuccess: Bool, shouldRefresh: Bool) ->()) {
+    func loadStatus(pullUp: Bool,completion: @escaping (_ isSuccess: Bool, _ shouldRefresh: Bool) ->()) {
         
         if pullUp && pullUpErrorTimes > maxPullupTryTimes {
             
-            completion(isSuccess: true, shouldRefresh: false)
+            completion(true, false)
             
             return
         }
@@ -32,7 +32,7 @@ class StatusListViewModel {
         StatusListDAL.loadStatus(since_id: since_id, max_id: max_id) { (list, isSuccess) in
             
             if !isSuccess {
-                completion(isSuccess: false, shouldRefresh: false)
+                completion(false, false)
             }
             
             var array = [StatusViewModel]()
@@ -58,9 +58,9 @@ class StatusListViewModel {
             
             if pullUp && array.count == 0 {
                 self.pullUpErrorTimes += 1
-                completion(isSuccess: isSuccess, shouldRefresh: false)
+                completion(isSuccess, false)
             } else {
-                completion(isSuccess: isSuccess, shouldRefresh: true)
+                completion(isSuccess, true)
             }
         }
     }

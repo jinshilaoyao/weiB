@@ -10,20 +10,20 @@ import Foundation
 // MARK: - 微博网络请求
 extension NetworkManager {
     
-    func statusList(since_id: Int64 = 0, max_id: Int64 = 0, completion:(list: [[String: AnyObject]]?, isSuccess:Bool) ->()) {
+    func statusList(since_id: Int64 = 0, max_id: Int64 = 0, completion:@escaping (_ list: [[String: AnyObject]]?, _ isSuccess:Bool) ->()) {
         
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         
         let params = ["since_id":"\(since_id)",
                       "max_id":"\(max_id > 0 ? max_id - 1 : 0)"]
         
-        tokenRequest(URLSrting: urlString, parameters: params) { (json, isSuccess) in
+        tokenRequest(URLSrting: urlString, parameters: params as [String : AnyObject]?) { (json, isSuccess) in
             
             guard let result = json?["statuses"] as? [[String: AnyObject]] else {
                 return
             }
             
-            completion(list: result, isSuccess: true)
+            completion(result, true)
             
         }
         
@@ -35,7 +35,7 @@ extension NetworkManager {
 // MARK: - OAuth方法
 extension NetworkManager {
     
-    func loadAccessToken(code: String, completion: (isSuccess: Bool) -> ()) {
+    func loadAccessToken(code: String, completion: @escaping (_ isSuccess: Bool) -> ()) {
         
         let urlString = "https://api.weibo.com/oauth2/access_token"
         
@@ -45,7 +45,7 @@ extension NetworkManager {
                       "code": code,
                       "redirect_uri": RedirectURI]
         
-        request(method: .POST,URLString: urlString, parameters: params) { (json, isSuccess) in
+        request(method: .POST,URLString: urlString, parameters: params as [String : AnyObject]?) { (json, isSuccess) in
             print(json)
             
             self.userAccount.yy_modelSet(with: (json as? [String: AnyObject]) ?? [:])
@@ -58,7 +58,7 @@ extension NetworkManager {
                 
                 print(self.userAccount)
                 
-                completion(isSuccess: isSuccess)
+                completion(isSuccess)
                 
             })
         }
@@ -68,7 +68,7 @@ extension NetworkManager {
 
 // MARK: - 获取用户信息
 extension NetworkManager {
-    func loadUserInfo(completion: (dict: [String: AnyObject]) -> ()) {
+    func loadUserInfo(completion: @escaping (_ dict: [String: AnyObject]) -> ()) {
         guard let uid = userAccount.uid  else {
             return
         }
@@ -77,9 +77,9 @@ extension NetworkManager {
         
         let params = ["uid":uid];
         
-        tokenRequest(URLSrting: url, parameters: params) { (json, isSuccess) in
+        tokenRequest(URLSrting: url, parameters: params as [String : AnyObject]?) { (json, isSuccess) in
             
-            completion(dict: (json as? [String: AnyObject]) ?? [:])
+            completion((json as? [String: AnyObject]) ?? [:])
             
         }
     }

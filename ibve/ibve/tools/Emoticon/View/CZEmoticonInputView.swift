@@ -21,10 +21,10 @@ class CZEmoticonInputView: UIView {
     @IBOutlet weak var pageControl: UIPageControl!
     
     /// 选中表情回调闭包属性
-    private var selectedEmoticonCallBack: ((emoticon: CZEmoticon?)->())?
+    fileprivate var selectedEmoticonCallBack: ((_ emoticon: CZEmoticon?)->())?
     
     /// 加载并且返回输入视图
-    class func inputView(selectedEmoticon: (emoticon: CZEmoticon?)->()) -> CZEmoticonInputView {
+    class func inputView(selectedEmoticon: @escaping (_ emoticon: CZEmoticon?)->()) -> CZEmoticonInputView {
         
         let nib = UINib(nibName: "CZEmoticonInputView", bundle: nil)
         
@@ -49,7 +49,7 @@ class CZEmoticonInputView: UIView {
         let bundle = CZEmoticonManager.shared.bundle
         
         guard let normalImage = UIImage(named: "compose_keyboard_dot_normal", in: bundle, compatibleWith: nil),
-            selectedImage = UIImage(named: "compose_keyboard_dot_selected", in: bundle, compatibleWith: nil) else {
+            let selectedImage = UIImage(named: "compose_keyboard_dot_selected", in: bundle, compatibleWith: nil) else {
                 return
         }
         
@@ -163,7 +163,9 @@ extension CZEmoticonInputView: CZEmoticonCellDelegate {
         // print(em)
         
         // 执行闭包，回调选中的表情
-        selectedEmoticonCallBack?(emoticon: em)
+//        selectedEmoticonCallBack(emoticon: em)
+        selectedEmoticonCallBack!(em)
+        
         
         // 添加最近使用的表情
         guard let em = em else {

@@ -31,7 +31,7 @@ class CZEmoticon: NSObject {
             var result: UInt32 = 0
             scanner.scanHexInt32(&result)
             
-            emoji = String(Character(UnicodeScalar(result)))
+            emoji = String(Character(UnicodeScalar(result)!))
         }
     }
     /// 表情使用次数
@@ -51,9 +51,9 @@ class CZEmoticon: NSObject {
         }
         
         guard let directory = directory,
-            png = png,
-            path = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil),
-            bundle = Bundle(path: path)
+            let png = png,
+            let path = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil),
+            let bundle = Bundle(path: path)
             else {
                 return nil
         }

@@ -13,7 +13,7 @@ class WebViewController: BaseViewController {
     var urlString: String? {
         didSet {
             
-            guard let urlString = urlString, url = URL(string: urlString) else {
+            guard let urlString = urlString, let url = URL(string: urlString) else {
                 return
             }
             

@@ -22,11 +22,11 @@ class CZEmoticonPackage: NSObject {
         didSet {
             // 当设置目录时，从目录下加载 info.plist
             guard let directory = directory,
-                path = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil),
-                bundle = Bundle(path: path),
-                infoPath = bundle.path(forResource: "info.plist", ofType: nil, inDirectory: directory),
-                array = NSArray(contentsOfFile: infoPath) as? [[String: String]],
-                models = NSArray.yy_modelArray(with: CZEmoticon.self, json: array) as? [CZEmoticon]
+                let path = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil),
+                let bundle = Bundle(path: path),
+                let infoPath = bundle.path(forResource: "info.plist", ofType: nil, inDirectory: directory),
+                let array = NSArray(contentsOfFile: infoPath) as? [[String: String]],
+                let models = NSArray.yy_modelArray(with: CZEmoticon.self, json: array) as? [CZEmoticon]
             
                 else {
                 return

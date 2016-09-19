@@ -12,7 +12,7 @@ extension UIImageView {
 
     func cz_setImage(urlString: String?, placeholderImage: UIImage?, isAvatar: Bool = false) {
     
-        guard let urlstring = urlString, url = URL(string: urlstring) else {
+        guard let urlstring = urlString, let url = URL(string: urlstring) else {
             
             image = placeholderImage
             

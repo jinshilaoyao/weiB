@@ -36,8 +36,8 @@ class UserAccount: NSObject {
         super.init()
         
         guard let path = accountFile.cz_appendDocumentDir(),
-            data = NSData(contentsOfFile: path),
-            dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String: AnyObject] else {
+            let data = NSData(contentsOfFile: path),
+            let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String: AnyObject] else {
             return
         }
         
@@ -60,7 +60,7 @@ class UserAccount: NSObject {
         dict.removeValue(forKey: "expires_in")
         
         guard let data = try? JSONSerialization.data(withJSONObject: dict, options: []),
-            filePath = accountFile.cz_appendDocumentDir()
+            let filePath = accountFile.cz_appendDocumentDir()
         else {
             return
         }

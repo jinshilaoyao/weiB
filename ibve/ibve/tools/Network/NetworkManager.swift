@@ -33,7 +33,7 @@ class NetworkManager: AFHTTPSessionManager {
     }
     
     
-    func tokenRequest(method: HTTPMethod = .GET, URLSrting: String, parameters: [String: AnyObject]?, name: String? = nil, data: Data? = nil, completion: (json: AnyObject?, isSuccess: Bool) ->()) {
+    func tokenRequest(method: HTTPMethod = .GET, URLSrting: String, parameters: [String: AnyObject]?, name: String? = nil, data: Data? = nil, completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool) ->()) {
         
         guard let token = userAccount.access_token else {
             
@@ -41,7 +41,7 @@ class NetworkManager: AFHTTPSessionManager {
 
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: nil)
             
-            completion(json: nil, isSuccess: false)
+            completion(nil, false)
             
             return
         }
@@ -51,7 +51,7 @@ class NetworkManager: AFHTTPSessionManager {
             parameters = [String: AnyObject]()
         }
         
-        parameters?["access_token"] = token
+        parameters?["access_token"] = token as AnyObject?
         
         if let name = name, let data = data {
             
@@ -64,10 +64,10 @@ class NetworkManager: AFHTTPSessionManager {
     }
     
     
-    func request(method: HTTPMethod = .GET, URLString: String, parameters: [String: AnyObject]?, completion: (json: AnyObject?, isSuccess: Bool) ->()) {
+    func request(method: HTTPMethod = .GET, URLString: String, parameters: [String: AnyObject]?, completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool) ->()) {
         
-        let success =  { (task: URLSessionTask, json: AnyObject?) ->() in
-            completion(json: json, isSuccess: true)
+        let success =  { (task: URLSessionDataTask, json: Any?) ->() in
+            completion(json as AnyObject?, true)
         }
         
         let failure = { (task: URLSessionDataTask?, error: Error) -> () in
@@ -78,7 +78,7 @@ class NetworkManager: AFHTTPSessionManager {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: UserShouldLoginNotification), object: "bad token")
             }
             
-            completion(json: nil, isSuccess: false)
+            completion(nil, false)
         }
         
         if method == .GET {

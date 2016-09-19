@@ -61,7 +61,7 @@ class BaseViewController: UIViewController {
 }
 extension BaseViewController {
     
-    private func setupUI() {
+    fileprivate func setupUI() {
         
         view.backgroundColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
         

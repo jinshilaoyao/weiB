@@ -12,7 +12,7 @@ import SVProgressHUD
 
 class MainViewController: UITabBarController {
     
-    private var timer: Timer?
+    fileprivate var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class MainViewController: UITabBarController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    @objc private func composeStatus() {
+    @objc fileprivate func composeStatus() {
         
         let v = ComposeTypeView()
         
@@ -67,7 +67,7 @@ class MainViewController: UITabBarController {
         
     }
 
-    private lazy var compostButton: UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
+    fileprivate lazy var compostButton: UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
 }
 extension MainViewController: UITabBarControllerDelegate {
     
@@ -81,7 +81,7 @@ extension Bundle {
 
 extension MainViewController {
     
-    private func setupNewFeatureViews() {
+    fileprivate func setupNewFeatureViews() {
         
         if !NetworkManager.shared.userLogin {
             return
@@ -93,7 +93,7 @@ extension MainViewController {
     }
     
     
-    private var isNewVersion: Bool {
+    fileprivate var isNewVersion: Bool {
         
         let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
         
@@ -111,7 +111,7 @@ extension MainViewController {
 
 extension MainViewController {
     
-    private func setupTimer() {
+    fileprivate func setupTimer() {
         timer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(updataTimer), userInfo: nil, repeats: true)
     }
     
@@ -125,7 +125,7 @@ extension MainViewController {
 
 extension MainViewController {
     
-    private func setupChildControllers() {
+    fileprivate func setupChildControllers() {
         let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         
         let jsonPath = (docDir as NSString).appendingPathComponent("main.json")
@@ -151,12 +151,12 @@ extension MainViewController {
         viewControllers = arrayM
     }
     
-    private func controller(dict: [String: AnyObject]) -> UIViewController {
+    fileprivate func controller(dict: [String: AnyObject]) -> UIViewController {
         guard let clsName = dict["clsName"] as? String,
-            title = dict["title"] as? String,
-            imageName = dict["imageName"] as? String,
-            visitorDict = dict["visitorInfo"] as? [String: String],
-            cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? BaseViewController.Type
+            let title = dict["title"] as? String,
+            let imageName = dict["imageName"] as? String,
+            let visitorDict = dict["visitorInfo"] as? [String: String],
+            let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? BaseViewController.Type
             else { return UIViewController() }
         
         let vc = cls.init()
@@ -179,7 +179,7 @@ extension MainViewController {
     }
     
     
-    private func setupComposerButton() {
+    fileprivate func setupComposerButton() {
         
         tabBar.addSubview(compostButton)
         

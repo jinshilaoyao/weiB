@@ -44,13 +44,13 @@ class OAuthViewController: UIViewController {
         webView.loadRequest(request)
     }
     
-    @objc private func close() {
+    @objc fileprivate func close() {
         SVProgressHUD.dismiss()
         
         dismiss(animated: true, completion: nil)
     }
     
-    @objc private func authFill() {
+    @objc fileprivate func authFill() {
         
         let js = "document.getElementById('userId').value = '953345497@qq.com';" + "document.getElementById('passwd').value = 'cherish224';"
         

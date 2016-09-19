@@ -159,10 +159,10 @@ private extension CZEmoticonManager {
         // 读取 emoticons.plist
         // 只要按照 Bundle 默认的目录结构设定，就可以直接读取 Resources 目录下的文件
         guard let path = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil),
-            bundle = Bundle(path: path),
-            plistPath = bundle.path(forResource: "emoticons.plist", ofType: nil),
-            array = NSArray(contentsOfFile: plistPath) as? [[String: String]],
-            models = NSArray.yy_modelArray(with: CZEmoticonPackage.self, json: array) as? [CZEmoticonPackage]
+            let bundle = Bundle(path: path),
+            let plistPath = bundle.path(forResource: "emoticons.plist", ofType: nil),
+            let array = NSArray(contentsOfFile: plistPath) as? [[String: String]],
+            let models = NSArray.yy_modelArray(with: CZEmoticonPackage.self, json: array) as? [CZEmoticonPackage]
             
             else {
         

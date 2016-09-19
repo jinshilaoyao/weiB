@@ -10,7 +10,7 @@ import Foundation
 
 class StatusListDAL {
     
-    class func loadStatus(since_id: Int64 = 0, max_id: Int64 = 0, completion:(list: [[String: AnyObject]]?, isSuccess:Bool) ->()) {
+    class func loadStatus(since_id: Int64 = 0, max_id: Int64 = 0, completion:@escaping (_ list: [[String: AnyObject]]?, _ isSuccess:Bool) ->()) {
         
         guard let userid = NetworkManager.shared.userAccount.uid else {
             return
@@ -19,15 +19,15 @@ class StatusListDAL {
         NetworkManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
             
             if !isSuccess {
-                completion(list: nil, isSuccess: false)
+                completion(nil, false)
             }
             
             guard let list = list else {
-                completion(list: nil, isSuccess: false)
+                completion(nil, false)
                 return
             }
             
-            completion(list: list, isSuccess: isSuccess)
+            completion(list, isSuccess)
             
         }
         

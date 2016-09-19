@@ -57,7 +57,7 @@ class CZEmoticonToolbar: UIView {
     
     // MARK: - 监听方法
     /// 点击分组项按钮
-    @objc private func clickItem(button: UIButton) {
+    @objc fileprivate func clickItem(button: UIButton) {
         
         // 通知代理执行协议方法
         delegate?.emoticonToolbarDidSelectedItemIndex(toolbar: self, index: button.tag)
